@@ -2325,8 +2325,27 @@
             submitBtn.style.opacity = "0.7";
             submitBtn.disabled = true;
 
-            // Simulating API network submission latency
-            setTimeout(() => {
+            // Prepare form data
+            const formData = new FormData(form);
+            const data = {};
+            formData.forEach((value, key) => data[key] = value);
+
+            // Fetch request to FormSubmit AJAX endpoint
+            fetch("https://formsubmit.co/ajax/sharkbrewsinternational@gmail.com", {
+                method: "POST",
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                }
+                throw new Error('Network response was not ok.');
+            })
+            .then(resData => {
                 // Success state response
                 const card = document.querySelector('.contact-form-card');
                 card.innerHTML = `
@@ -2339,7 +2358,14 @@
                         <button onclick="resetContactForm()" class="btn btn-secondary" style="border-color: var(--primary); color: var(--primary);">Send Another Message</button>
                     </div>
                 `;
-            }, 1500);
+            })
+            .catch(error => {
+                console.error("Form submission error:", error);
+                submitBtn.textContent = originalText;
+                submitBtn.style.opacity = "1";
+                submitBtn.disabled = false;
+                alert("Oops! There was a problem submitting your form. Please try again.");
+            });
         }
 
         // Allow form resetting
