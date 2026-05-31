@@ -2327,17 +2327,15 @@
 
             // Prepare form data
             const formData = new FormData(form);
-            const data = {};
-            formData.forEach((value, key) => data[key] = value);
+            
+            // TODO: Replace this with your Web3Forms access key
+            // Get your free key instantly by entering your email at https://web3forms.com
+            formData.append("access_key", "YOUR_ACCESS_KEY_HERE");
 
-            // Fetch request to FormSubmit AJAX endpoint
-            fetch("https://formsubmit.co/ajax/sharkbrewsinternational@gmail.com", {
+            // Fetch request to Web3Forms API
+            fetch("https://api.web3forms.com/submit", {
                 method: "POST",
-                headers: { 
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                body: JSON.stringify(data)
+                body: formData
             })
             .then(response => {
                 if (response.ok) {
@@ -2364,7 +2362,7 @@
                 submitBtn.textContent = originalText;
                 submitBtn.style.opacity = "1";
                 submitBtn.disabled = false;
-                alert("Oops! There was a problem submitting your form. Please try again.");
+                alert("Oops! There was a problem submitting your form. Please check your Web3Forms access key and try again.");
             });
         }
 
