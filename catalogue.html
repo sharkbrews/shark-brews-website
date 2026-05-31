@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industrial Solutions Catalogue | Shark Brews International</title>
+    <meta name="description" content="Comprehensive product and service catalogue of Shark Brews International's Industrial Solutions Division. Quality sealing systems, hydraulics, heat exchangers, and gears.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Design System Matching Homepage */
+        :root {
+            --primary: #0A1420;
+            --primary-light: #152238;
+            --accent: #C9A84C;
+            --accent-hover: #E0C16C;
+            --text-light: #FFFFFF;
+            --text-muted: #8F9CAE;
+            --text-dark: #0A1420;
+            --border-dark: rgba(255, 255, 255, 0.08);
+            --font-heading: 'DM Serif Display', Georgia, serif;
+            --font-body: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            --shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--primary);
+            color: var(--text-light);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            padding-bottom: 60px;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-heading);
+            font-weight: 400;
+            letter-spacing: -0.01em;
+        }
+
+        /* Fixed PDF Download Button */
+        .pdf-btn {
+            position: fixed;
+            top: 25px;
+            right: 25px;
+            z-index: 1100;
+            background-color: var(--accent);
+            color: var(--primary);
+            border: 1px solid var(--accent);
+            padding: 12px 24px;
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            border-radius: 4px;
+            cursor: pointer;
+            box-shadow: 0 8px 24px rgba(201, 168, 76, 0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition);
+        }
+
+        .pdf-btn:hover {
+            background-color: var(--accent-hover);
+            border-color: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 28px rgba(201, 168, 76, 0.4);
+        }
+
+        /* Header Components */
+        .catalogue-container {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+
+        .catalogue-header {
+            text-align: center;
+            border-bottom: 1px solid var(--border-dark);
+            padding-bottom: 40px;
+            margin-bottom: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .header-logo-row {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .catalogue-logo {
+            height: 60px;
+            width: auto;
+            border-radius: 4px;
+            border: 1px solid var(--accent);
+            background-color: #FFFFFF;
+            padding: 2px;
+        }
+
+        .company-name {
+            font-size: 2.2rem;
+            color: var(--text-light);
+        }
+
+        .intro-line {
+            font-size: 1.1rem;
+            font-weight: 300;
+            color: var(--accent);
+            letter-spacing: 0.05em;
+            max-width: 800px;
+            margin-top: 4px;
+            line-height: 1.4;
+        }
+
+        /* Section divider banners */
+        .section-banner {
+            width: 100%;
+            background-color: #0c182b;
+            border-left: 5px solid var(--accent);
+            padding: 20px 28px;
+            margin: 70px 0 35px;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        .section-banner h2 {
+            font-size: 1.8rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .section-banner span {
+            font-size: 0.85rem;
+            color: var(--accent);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* Catalogue Row Cards */
+        .catalogue-card {
+            display: flex;
+            background-color: var(--primary-light);
+            border: 1px solid var(--border-dark);
+            border-radius: 6px;
+            overflow: hidden;
+            margin-bottom: 35px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .catalogue-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 25px rgba(201, 168, 76, 0.05);
+        }
+
+        /* Alternate left-right layout down the page */
+        .catalogue-card:nth-of-type(even) {
+            flex-direction: row-reverse;
+        }
+
+        .card-img-wrapper {
+            flex: 1;
+            min-height: 280px;
+            max-height: 280px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .catalogue-card:hover .card-img {
+            transform: scale(1.05);
+        }
+
+        .card-text-wrapper {
+            flex: 1.25;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .card-service-title {
+            font-size: 1.6rem;
+            color: var(--text-light);
+            margin-bottom: 14px;
+            font-family: var(--font-body);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .card-service-title span.number-badge {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            color: var(--accent);
+            border-right: 1px solid var(--border-dark);
+            padding-right: 12px;
+        }
+
+        .card-desc {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--text-muted);
+            font-weight: 300;
+        }
+
+        /* Footer components */
+        .catalogue-footer {
+            text-align: center;
+            border-top: 1px solid var(--border-dark);
+            padding-top: 50px;
+            margin-top: 80px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .footer-logo-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+        }
+
+        .footer-logo {
+            height: 40px;
+            width: auto;
+            border-radius: 4px;
+            border: 1px solid var(--accent);
+            background-color: #FFFFFF;
+            padding: 2px;
+        }
+
+        .footer-enquiry-line {
+            font-size: 1.05rem;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .footer-enquiry-line span {
+            color: var(--accent);
+        }
+
+        .footer-contact-details {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 300;
+        }
+
+
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .pdf-btn {
+                position: static;
+                width: 100%;
+                justify-content: center;
+                margin-bottom: 30px;
+            }
+
+            .catalogue-header {
+                padding-bottom: 20px;
+                margin-bottom: 30px;
+            }
+
+            .company-name {
+                font-size: 1.8rem;
+            }
+
+            .intro-line {
+                font-size: 0.95rem;
+            }
+
+            .section-banner {
+                margin: 40px 0 20px;
+                padding: 16px 20px;
+            }
+
+            .section-banner h2 {
+                font-size: 1.4rem;
+            }
+
+            .catalogue-card,
+            .catalogue-card:nth-of-type(even) {
+                flex-direction: column;
+                margin-bottom: 24px;
+            }
+
+            .card-img-wrapper {
+                min-height: 200px;
+                max-height: 200px;
+            }
+
+            .card-text-wrapper {
+                padding: 24px;
+            }
+
+            .card-service-title {
+                font-size: 1.35rem;
+            }
+
+            .footer-contact-details {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+        /* PRINT STYLING - Optimize for window.print() saving as PDF */
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+
+            @page {
+                size: A4 portrait;
+                margin: 25mm 15mm 20mm 15mm;
+            }
+
+            body {
+                background-color: #FFFFFF !important;
+                color: #0A1420 !important;
+                font-size: 10pt !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                line-height: 1.5 !important;
+            }
+
+            .catalogue-container {
+                max-width: 100% !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+
+            .catalogue-header {
+                border-bottom: 2px solid #0A1420 !important;
+                margin-bottom: 25px !important;
+                padding-bottom: 15px !important;
+                page-break-after: avoid !important;
+                page-break-inside: avoid !important;
+            }
+
+            .company-name {
+                color: #0A1420 !important;
+            }
+
+            .intro-line {
+                color: #C9A84C !important;
+            }
+
+            /* Banners */
+            .section-banner {
+                background-color: #0A1420 !important;
+                border-left: 6px solid #C9A84C !important;
+                margin-top: 25px !important;
+                margin-bottom: 15px !important;
+                padding: 10px 18px !important;
+                box-shadow: none !important;
+                page-break-after: avoid !important;
+                page-break-inside: avoid !important;
+            }
+
+            .section-banner h2 {
+                color: #FFFFFF !important;
+                font-size: 15pt !important;
+            }
+
+
+            /* Side-by-side stretching layout in print */
+            .catalogue-card {
+                display: flex !important;
+                flex-direction: row !important;
+                align-items: stretch !important;
+                background-color: #F8FAFC !important;
+                border: 1px solid #E2E8F0 !important;
+                border-radius: 4px !important;
+                margin-bottom: 18px !important;
+                box-shadow: none !important;
+                page-break-inside: avoid !important;
+                overflow: hidden !important;
+            }
+
+            .catalogue-card:nth-of-type(even) {
+                flex-direction: row-reverse !important;
+            }
+
+            .card-img-wrapper {
+                flex: 0 0 35% !important;
+                width: 35% !important;
+                position: relative !important;
+                align-self: stretch !important;
+                min-height: 100% !important;
+                height: auto !important;
+                background-color: #F8FAFC !important;
+                overflow: hidden !important;
+            }
+
+            .card-img {
+                position: absolute !important;
+                top: 0 !important;
+                left: 0 !important;
+                width: 100% !important;
+                height: 100% !important;
+                object-fit: cover !important;
+                filter: none !important;
+            }
+
+            .card-text-wrapper {
+                flex: 0 0 65% !important;
+                width: 65% !important;
+                padding: 20px 25px !important;
+                background-color: #F8FAFC !important;
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: center !important;
+                box-sizing: border-box !important;
+            }
+
+            .card-service-title {
+                color: #0A1420 !important;
+                font-size: 12.5pt !important;
+                margin-bottom: 6px !important;
+            }
+
+            .card-desc {
+                color: #334155 !important;
+                font-size: 9pt !important;
+                line-height: 1.4 !important;
+            }
+
+            /* Footer */
+            .catalogue-footer {
+                border-top: 1px solid #E2E8F0 !important;
+                margin-top: 30px !important;
+                padding-top: 20px !important;
+                page-break-inside: avoid !important;
+            }
+
+            .footer-enquiry-line {
+                color: #0A1420 !important;
+            }
+
+            .footer-contact-details {
+                color: #475569 !important;
+            }
+
+            /* Force color adjust */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Pinned PDF Trigger Button (hidden in print outputs) -->
+    <button class="pdf-btn no-print" onclick="window.print()">
+        <svg viewBox="0 0 24 24" width="18px" height="18px" fill="currentColor">
+            <path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/>
+        </svg>
+        Download as PDF
+    </button>
+
+    <div class="catalogue-container">
+        
+        <!-- Catalogue Header -->
+        <header class="catalogue-header">
+            <div class="header-logo-row">
+                <img src="Final_Logo_3.jpg" alt="Shark Brews International Logo" class="catalogue-logo">
+                <h1 class="company-name">Shark Brews International</h1>
+            </div>
+            <p class="intro-line">Industrial Solutions Division | Comprehensive Supply & Service Catalogue</p>
+        </header>
+
+        <main>
+            
+            <!-- SECTION 1 — Sealing Systems -->
+            <div class="section-banner">
+                <span>Category 01</span>
+                <h2>Sealing Systems</h2>
+            </div>
+
+            <!-- 1. Hydraulic Seals -->
+            <article class="catalogue-card">
+                <div class="card-img-wrapper">
+                    <img class="card-img" src="hydraulic_seals.png" alt="Hydraulic Seals">
+                </div>
+                <div class="card-text-wrapper">
+                    <h3 class="card-service-title">
+                        <span class="number-badge">01</span>
+                        Hydraulic Seals
+                    </h3>
+                    <p class="card-desc">
+                        High-performance hydraulic seals engineered for demanding pressure environments. Suitable for heavy machinery, construction equipment, and industrial hydraulic systems. Available in a wide range of sizes and materials including NBR, Polyurethane, and PTFE.
+                    </p>
+                </div>
+            </article>
+
+            <!-- 2. Pneumatic Seals -->
+            <article class="catalogue-card">
+                <div class="card-img-wrapper">
+                    <img class="card-img" src="pneumatic_seals.png" alt="Pneumatic Seals">
+                </div>
+                <div class="card-text-wrapper">
+                    <h3 class="card-service-title">
+                        <span class="number-badge">02</span>
+                        Pneumatic Seals
+                    </h3>
+                    <p class="card-desc">
+                        Precision pneumatic seals for cylinders, actuators, and valves. Designed to deliver consistent performance in air-powered industrial systems with minimal friction and maximum durability.
+                    </p>
+                </div>
+            </article>
+
+            <!-- 3. Earthmoving Machine Seal Kits -->
+            <article class="catalogue-card">
+                <div class="card-img-wrapper">
+                    <img class="card-img" src="earthmoving_seal_kits.png" alt="Earthmoving Machine Seal Kits">
+                </div>
+                <div class="card-text-wrapper">
+                    <h3 class="card-service-title">
+                        <span class="number-badge">03</span>
+                        Earthmoving Machine Seal Kits
+                    </h3>
+                    <p class="card-desc">
+                        Complete seal kit solutions for excavators, bulldozers, wheel loaders, and other earthmoving equipment. Kits are machine-specific, ensuring perfect fitment and long service life — ideal for cement plants and large construction operations.
+                    </p>
+                </div>
+            </article>
+
+            
+            <!-- SECTION 2 — Hydraulic Equipment -->
+            <div class="section-banner">
+                <span>Category 02</span>
+                <h2>Hydraulic Equipment</h2>
+            </div>
+
+            <!-- 4. Hydraulic Cylinders -->
+            <article class="catalogue-card">
+                <div class="card-img-wrapper">
+                    <img class="card-img" src="hydraulic_cylinders.png" alt="Hydraulic Cylinders">
+                </div>
+                <div class="card-text-wrapper">
+                    <h3 class="card-service-title">
+                        <span class="number-badge">04</span>
+                        Hydraulic Cylinders
+                    </h3>
+                    <p class="card-desc">
+                        Standard and custom-built hydraulic cylinders for a wide range of industrial applications. Built for high-pressure performance, precision stroke control, and long operational life in demanding environments.
+                    </p>
+                </div>
+            </article>
+
+            <!-- 5. Hydraulic Cylinder Repair -->
+            <article class="catalogue-card">
+                <div class="card-img-wrapper">
+                    <img class="card-img" src="cylinder_repair.png" alt="Hydraulic Cylinder Repair">
+                </div>
+                <div class="card-text-wrapper">
+                    <h3 class="card-service-title">
+                        <span class="number-badge">05</span>
+                        Hydraulic Cylinder Repair
+                    </h3>
+                    <p class="card-desc">
+                        Expert reconditioning and repair of hydraulic cylinders including seal replacement, chrome re-plating, honing, and full pressure testing. We restore cylinders to OEM specifications, saving cost over full replacement.
+                    </p>
+                </div>
+            </article>
+
+            <!-- 6. Hydraulic Pumps & Motor Repair -->
+            <article class="catalogue-card">
+                <div class="card-img-wrapper">
+                    <img class="card-img" src="pump_motor_repair.png" alt="Hydraulic Pumps & Motor Repair">
+                </div>
+                <div class="card-text-wrapper">
+                    <h3 class="card-service-title">
+                        <span class="number-badge">06</span>
+                        Hydraulic Pumps &amp; Motor Repair
+                    </h3>
+                    <p class="card-desc">
+                        Professional repair and reconditioning of hydraulic pumps and motors of all makes and models. Our technicians diagnose, rebuild, and test units to ensure full restoration of flow rate, pressure, and efficiency.
+                    </p>
+                </div>
+            </article>
+
+            <!-- 7. Hydraulic Hand Pumps -->
+            <article class="catalogue-card">
+                <div class="card-img-wrapper">
+                    <img class="card-img" src="hydraulic_hand_pump.png" alt="Hydraulic Hand Pumps">
+                </div>
+                <div class="card-text-wrapper">
+                    <h3 class="card-service-title">
+                        <span class="number-badge">07</span>
+                        Hydraulic Hand Pumps
+                    </h3>
+                    <p class="card-desc">
+                        Portable and robust hydraulic hand pumps for use in maintenance, field operations, and light industrial tasks. Available in single and double-acting models with various reservoir capacities.
+                    </p>
+                </div>
+            </article>
+
+            <!-- 8. Hydraulic Power Packs -->
+            <article class="catalogue-card">
+                <div class="card-img-wrapper">
+                    <img class="card-img" src="hydraulic_power_packs.png" alt="Hydraulic Power Packs">
+                </div>
+                <div class="card-text-wrapper">
+                    <h3 class="card-service-title">
+                        <span class="number-badge">08</span>
+                        Hydraulic Power Packs
+                    </h3>
+                    <p class="card-desc">
+                        Complete hydraulic power pack systems combining pump, motor, reservoir, and control valves in a single compact unit. Custom-built to meet specific flow and pressure requirements for industrial machinery.
+                    </p>
+                </div>
+            </article>
+
+            <!-- 9. Hydraulic Jacks -->
+            <article class="catalogue-card">
+                <div class="card-img-wrapper">
+                    <img class="card-img" src="hydraulic_jacks.png" alt="Hydraulic Jacks">
+                </div>
+                <div class="card-text-wrapper">
+                    <h3 class="card-service-title">
+                        <span class="number-badge">09</span>
+                        Hydraulic Jacks
+                    </h3>
+                    <p class="card-desc">
+                        Heavy-duty hydraulic jacks for lifting and positioning large industrial loads. Available in various tonnage capacities, suitable for maintenance operations in cement plants, factories, and construction sites.
+                    </p>
+                </div>
+            </article>
+
+            <!-- 10. Hydraulic Oil & Grease -->
+            <article class="catalogue-card">
+                <div class="card-img-wrapper">
+                    <img class="card-img" src="hydraulic_oil_grease.png" alt="Hydraulic Oil & Grease">
+                </div>
+                <div class="card-text-wrapper">
+                    <h3 class="card-service-title">
+                        <span class="number-badge">10</span>
+                        Hydraulic Oil &amp; Grease
+                    </h3>
+                    <p class="card-desc">
+                        Premium-grade hydraulic oils and industrial greases to keep your systems running clean and efficient. Available in multiple viscosity grades to suit various hydraulic system requirements and operating temperatures.
+                    </p>
+                </div>
+            </article>
+
+
+            <!-- SECTION 3 — Heat Exchange Systems -->
+            <div class="section-banner">
+                <span>Category 03</span>
+                <h2>Heat Exchange Systems</h2>
+            </div>
+
+            <!-- 11. Shell & Tube Heat Exchangers -->
+            <article class="catalogue-card">
+                <div class="card-img-wrapper">
+                    <img class="card-img" src="shell_tube_exchangers.png" alt="Shell & Tube Heat Exchangers">
+                </div>
+                <div class="card-text-wrapper">
+                    <h3 class="card-service-title">
+                        <span class="number-badge">11</span>
+                        Shell &amp; Tube Heat Exchangers
+                    </h3>
+                    <p class="card-desc">
+                        Heavy-duty shell and tube heat exchangers designed for high-pressure, high-temperature industrial processes. One fluid flows through the internal tube bundle while the other flows around it inside the shell, enabling efficient thermal transfer. Ideal for power plants, oil refineries, cement plants, and chemical processing facilities. Built to TEMA standards for maximum reliability.
+                    </p>
+                </div>
+            </article>
+
+            <!-- 12. Plate Heat Exchangers -->
+            <article class="catalogue-card">
+                <div class="card-img-wrapper">
+                    <img class="card-img" src="plate_exchangers.png" alt="Plate Heat Exchangers">
+                </div>
+                <div class="card-text-wrapper">
+                    <h3 class="card-service-title">
+                        <span class="number-badge">12</span>
+                        Plate Heat Exchangers
+                    </h3>
+                    <p class="card-desc">
+                        Compact, high-efficiency plate heat exchangers using a series of thin corrugated metal plates to transfer heat between two fluid streams. Offer superior thermal performance in a smaller footprint compared to shell and tube designs. Easy to disassemble, clean, and scale. Suitable for HVAC systems, food processing, pharmaceutical manufacturing, and industrial cooling loops.
+                    </p>
+                </div>
+            </article>
+
+            <!-- 13. Complete Cooling System Solutions -->
+            <article class="catalogue-card">
+                <div class="card-img-wrapper">
+                    <img class="card-img" src="cooling_system_solutions.png" alt="Complete Cooling System Solutions">
+                </div>
+                <div class="card-text-wrapper">
+                    <h3 class="card-service-title">
+                        <span class="number-badge">13</span>
+                        Complete Cooling System Solutions
+                    </h3>
+                    <p class="card-desc">
+                        End-to-end cooling system design, supply, and support for industrial facilities. We assess your thermal requirements and deliver complete solutions — from heat exchanger selection to full system integration — ensuring optimal cooling performance and energy efficiency across your plant operations.
+                    </p>
+                </div>
+            </article>
+
+
+            <!-- SECTION 4 — Gears & Power Transmission -->
+            <div class="section-banner">
+                <span>Category 04</span>
+                <h2>Gears &amp; Power Transmission</h2>
+            </div>
+
+            <!-- 14. Gears & Gear Parts -->
+            <article class="catalogue-card">
+                <div class="card-img-wrapper">
+                    <img class="card-img" src="gears_gear_parts.png" alt="Gears & Gear Parts">
+                </div>
+                <div class="card-text-wrapper">
+                    <h3 class="card-service-title">
+                        <span class="number-badge">14</span>
+                        Gears &amp; Gear Parts
+                    </h3>
+                    <p class="card-desc">
+                        High-quality industrial gears and gear components for power transmission systems in heavy machinery. We supply spur gears, helical gears, bevel gears, and custom gear parts machined to precise tolerances for reliable performance.
+                    </p>
+                </div>
+            </article>
+
+            <!-- 15. Gearbox Repair -->
+            <article class="catalogue-card">
+                <div class="card-img-wrapper">
+                    <img class="card-img" src="gearbox_repair.png" alt="Gearbox Repair">
+                </div>
+                <div class="card-text-wrapper">
+                    <h3 class="card-service-title">
+                        <span class="number-badge">15</span>
+                        Gearbox Repair
+                    </h3>
+                    <p class="card-desc">
+                        Comprehensive gearbox inspection, rebuilding, and repair services for industrial gearboxes used in cement plants, construction equipment, conveyors, and manufacturing lines. We handle dismantling, bearing replacement, gear inspection, re-assembly, and load testing to bring your gearbox back to full operational condition.
+                    </p>
+                </div>
+            </article>
+
+        </main>
+
+        <!-- Catalogue Footer -->
+        <footer class="catalogue-footer">
+            <div class="footer-logo-row">
+                <img src="Final_Logo_3.jpg" alt="Shark Brews Logo" class="footer-logo">
+                <span>Shark Brews International</span>
+            </div>
+            <p class="footer-enquiry-line">
+                For enquiries, contact <span>Shark Brews International — Industrial Solutions Division</span>
+            </p>
+            <div class="footer-contact-details">
+                <div><strong>Email:</strong> sharkbrewsindia@gmail.com</div>
+                <div><strong>Phone:</strong> +91-9300763304</div>
+                <div><strong>Location:</strong> Bhopal, M.P. | Gurugram, Haryana</div>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,2552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shark Brews International | Powering Industries. Building Futures.</title>
+    <meta name="description" content="A multi-industry powerhouse delivering world-class digital services and heavy-duty industrial solutions globally. Founded 5 years ago, serving clients across USA, UK, and India.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS Variables - Premium Design System */
+        :root {
+            --primary: #0A1420; /* Deepest authoritative navy */
+            --primary-light: #152238; /* Card navy */
+            --primary-rgb: 10, 20, 32;
+            --accent: #C9A84C; /* Luxury gold/amber */
+            --accent-hover: #E0C16C; /* Glowing gold */
+            --accent-rgb: 201, 168, 76;
+            --text-light: #FFFFFF;
+            --text-muted: #8F9CAE;
+            --text-dark: #0A1420;
+            --bg-light: #F4F7FA; /* Crisp light contrast */
+            --bg-light-alt: #EBF0F6;
+            --bg-card-light: #FFFFFF;
+            --border-light: rgba(15, 20, 32, 0.08);
+            --border-dark: rgba(255, 255, 255, 0.08);
+            --border-accent: rgba(201, 168, 76, 0.2);
+            --font-heading: 'DM Serif Display', Georgia, serif;
+            --font-body: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            --transition-slow: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            --shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+            --shadow-light: 0 10px 30px -10px rgba(15, 20, 32, 0.08);
+        }
+
+        /* Reset & Global */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--primary);
+            color: var(--text-light);
+            overflow-x: hidden;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Typography styling */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 400;
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+        }
+
+        p {
+            font-family: var(--font-body);
+            font-weight: 300;
+            color: var(--text-muted);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        /* Common Layout Components */
+        .section-container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 100px 24px;
+        }
+
+        @media (max-width: 768px) {
+            .section-container {
+                padding: 60px 16px;
+            }
+        }
+
+        .section-header {
+            margin-bottom: 60px;
+            max-width: 700px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: var(--transition-slow);
+        }
+
+        .section-header.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-title {
+            font-size: 3rem;
+            color: var(--text-light);
+            margin-bottom: 16px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title.light-theme {
+            color: var(--text-dark);
+        }
+
+        .section-title span.accent {
+            color: var(--accent);
+        }
+
+        .section-subtitle {
+            font-size: 1.15rem;
+            font-weight: 300;
+            line-height: 1.5;
+        }
+
+        /* Noise & Texture Overlays */
+        .noise-bg {
+            position: relative;
+        }
+
+        .noise-bg::after {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.02'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Buttons & CTAs */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 28px;
+            font-family: var(--font-body);
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            z-index: 2;
+        }
+
+        .btn-accent {
+            background-color: var(--accent);
+            color: var(--primary);
+            border: 1px solid var(--accent);
+        }
+
+        .btn-accent:hover {
+            background-color: var(--accent-hover);
+            border-color: var(--accent-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(201, 168, 76, 0.2);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-light);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.03);
+        }
+
+        /* Animations Framework */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: var(--transition-slow);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(40px);
+            transition: var(--transition-slow);
+        }
+
+        .reveal-right.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-40px);
+            transition: var(--transition-slow);
+        }
+
+        .reveal-left.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* 1. NAVBAR */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: var(--transition);
+            padding: 24px 0;
+            background-color: transparent;
+            border-bottom: 1px solid transparent;
+        }
+
+        .navbar.scrolled {
+            padding: 12px 0;
+            background-color: rgba(10, 20, 32, 0.85);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--border-dark);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 24px;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            color: var(--text-light);
+            font-weight: 400;
+        }
+
+        .navbar-logo {
+            height: 42px;
+            width: auto;
+            border-radius: 4px;
+            border: 1px solid var(--accent);
+            background-color: #FFFFFF;
+            padding: 2px;
+        }
+
+        .navbar-menu {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            gap: 32px;
+        }
+
+        .navbar-link {
+            font-size: 0.9rem;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            position: relative;
+            padding: 8px 0;
+            color: var(--text-muted);
+        }
+
+        .navbar-link::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            transition: var(--transition);
+        }
+
+        .navbar-link:hover {
+            color: var(--text-light);
+        }
+
+        .navbar-link:hover::after,
+        .navbar-link.active::after {
+            width: 100%;
+        }
+
+        .navbar-link.active {
+            color: var(--text-light);
+        }
+
+        .navbar-cta {
+            display: block;
+        }
+
+        /* Mobile Hamburger */
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 24px;
+            height: 18px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .nav-toggle span {
+            width: 100%;
+            height: 2px;
+            background-color: var(--text-light);
+            transition: var(--transition);
+        }
+
+        .nav-toggle.open span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .nav-toggle.open span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .nav-toggle.open span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        @media (max-width: 992px) {
+            .navbar-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 300px;
+                height: 100vh;
+                background-color: var(--primary);
+                flex-direction: column;
+                justify-content: center;
+                gap: 40px;
+                transition: var(--transition);
+                box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+                z-index: 999;
+                border-left: 1px solid var(--border-dark);
+            }
+
+            .navbar-menu.open {
+                right: 0;
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
+
+            .navbar-cta {
+                display: none; /* Hide standard CTA on mobile */
+            }
+
+            .navbar-menu .navbar-cta-mobile {
+                display: block !important;
+            }
+        }
+
+        .navbar-menu .navbar-cta-mobile {
+            display: none;
+        }
+
+
+        /* 2. HERO SECTION */
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            min-height: 650px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background-color: #050d18;
+            background-image: radial-gradient(circle at 50% 50%, rgba(30, 58, 95, 0.4) 0%, rgba(5, 13, 24, 1) 80%);
+        }
+
+        #hero-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .hero-watermark {
+            position: absolute;
+            width: 70%;
+            height: 70%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.015;
+            background: url("Final_Logo_3.jpg") no-repeat center center;
+            background-size: contain;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .hero-container {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 1000px;
+            padding: 0 24px;
+            text-align: center;
+        }
+
+        .hero-heading {
+            font-size: 5rem;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: var(--transition-slow);
+            transition-delay: 0.2s;
+        }
+
+        .hero-heading.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hero-heading span.accent-text {
+            color: var(--accent);
+            display: inline-block;
+            position: relative;
+        }
+
+        .hero-subheading {
+            font-size: 1.35rem;
+            font-weight: 300;
+            max-width: 750px;
+            margin: 0 auto 48px;
+            color: var(--text-muted);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: var(--transition-slow);
+            transition-delay: 0.4s;
+        }
+
+        .hero-subheading.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hero-ctas {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: var(--transition-slow);
+            transition-delay: 0.6s;
+        }
+
+        .hero-ctas.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            .hero-heading {
+                font-size: 2.8rem;
+            }
+            .hero-subheading {
+                font-size: 1.1rem;
+                margin-bottom: 32px;
+            }
+            .hero-ctas {
+                flex-direction: column;
+                align-items: stretch;
+                max-width: 320px;
+                margin: 0 auto;
+                gap: 12px;
+            }
+        }
+
+
+        /* 3. ABOUT SECTION */
+        .about-section {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            position: relative;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        @media (max-width: 992px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+        }
+
+        .about-content-left {
+            opacity: 0;
+            transform: translateX(-40px);
+            transition: var(--transition-slow);
+        }
+
+        .about-content-left.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .about-pretitle {
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin-bottom: 12px;
+        }
+
+        .about-title {
+            font-size: 3rem;
+            margin-bottom: 24px;
+        }
+
+        .about-divider {
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent);
+            margin-bottom: 24px;
+        }
+
+        .about-desc {
+            font-size: 1.1rem;
+            color: #4C5E76;
+            margin-bottom: 32px;
+            line-height: 1.7;
+        }
+
+        .about-stats {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            opacity: 0;
+            transform: translateX(40px);
+            transition: var(--transition-slow);
+        }
+
+        .about-stats.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            border-bottom: 1px solid var(--border-light);
+            padding-bottom: 20px;
+        }
+
+        .stat-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .stat-number-wrapper {
+            font-family: var(--font-heading);
+            font-size: 3.5rem;
+            line-height: 1;
+            color: var(--primary);
+            min-width: 140px;
+            position: relative;
+        }
+
+        .stat-number {
+            display: inline-block;
+        }
+
+        .stat-suffix {
+            color: var(--accent);
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #4C5E76;
+        }
+
+
+        /* 4. DIVISIONS SECTION - OUR TWO PILLARS */
+        .divisions-section {
+            background-color: var(--primary);
+            position: relative;
+        }
+
+        .divisions-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .divisions-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+        }
+
+        .division-card {
+            background-color: var(--primary-light);
+            border: 1px solid var(--border-dark);
+            border-radius: 6px;
+            padding: 60px 48px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 420px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .division-card::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+            transform: translateX(-100%);
+            transition: var(--transition-slow);
+        }
+
+        .division-card:hover::before {
+            transform: translateX(100%);
+        }
+
+        .division-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(201, 168, 76, 0.05);
+        }
+
+        .division-card-tech {
+            background-image: radial-gradient(circle at 100% 100%, rgba(30, 58, 95, 0.15) 0%, transparent 70%);
+        }
+
+        .division-card-industrial {
+            background-color: #0b1522;
+            background-image: 
+                linear-gradient(45deg, rgba(0,0,0,0.15) 25%, transparent 25%), 
+                linear-gradient(-45deg, rgba(0,0,0,0.15) 25%, transparent 25%), 
+                linear-gradient(45deg, transparent 75%, rgba(0,0,0,0.15) 75%), 
+                linear-gradient(-45deg, transparent 75%, rgba(0,0,0,0.15) 75%);
+            background-size: 20px 20px;
+            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+        }
+
+        .division-header {
+            margin-bottom: 40px;
+        }
+
+        .division-icon {
+            width: 64px;
+            height: 64px;
+            fill: var(--accent);
+            margin-bottom: 28px;
+            transition: var(--transition);
+        }
+
+        .division-card:hover .division-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .division-name {
+            font-size: 2.2rem;
+            color: var(--text-light);
+            margin-bottom: 16px;
+        }
+
+        .division-desc {
+            font-size: 1.05rem;
+            line-height: 1.6;
+            margin-bottom: 32px;
+        }
+
+        .division-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.08em;
+            color: var(--accent);
+        }
+
+        .division-link svg {
+            width: 16px;
+            height: 16px;
+            fill: var(--accent);
+            transition: var(--transition);
+        }
+
+        .division-card:hover .division-link svg {
+            transform: translateX(6px);
+        }
+
+        @media (max-width: 480px) {
+            .division-card {
+                padding: 40px 24px;
+                min-height: 380px;
+            }
+            .division-name {
+                font-size: 1.8rem;
+            }
+        }
+
+
+        /* 5. TECH SERVICES SECTION */
+        .tech-services-section {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        @media (max-width: 992px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .service-card {
+            background-color: var(--bg-card-light);
+            border: 1px solid var(--border-light);
+            border-radius: 4px;
+            padding: 40px;
+            transition: var(--transition);
+            box-shadow: var(--shadow-light);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .service-card::after {
+            content: "";
+            position: absolute;
+            bottom: 0; left: 0; width: 0; height: 3px;
+            background-color: var(--accent);
+            transition: var(--transition);
+        }
+
+        .service-card:hover::after {
+            width: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(15, 20, 32, 0.08);
+            border-color: rgba(201, 168, 76, 0.3);
+        }
+
+        .service-icon-box {
+            width: 50px;
+            height: 50px;
+            border-radius: 4px;
+            background-color: rgba(30, 58, 95, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            transition: var(--transition);
+        }
+
+        .service-icon-box svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--primary-light);
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-icon-box {
+            background-color: var(--primary);
+        }
+
+        .service-card:hover .service-icon-box svg {
+            fill: var(--accent);
+        }
+
+        .service-title {
+            font-size: 1.45rem;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .service-desc {
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .trusted-bar {
+            margin-top: 80px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-weight: 500;
+            color: #4C5E76;
+        }
+
+        .flags-container {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .flag-icon {
+            width: 32px;
+            height: auto;
+            border-radius: 2px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+
+        /* 6. INDUSTRIAL SOLUTIONS SECTION */
+        .industrial-section {
+            background-color: #0b111a;
+            position: relative;
+        }
+
+        /* Tabs Filter Navigation */
+        .category-tabs-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 50px;
+            border-bottom: 1px solid var(--border-dark);
+            padding-bottom: 1px;
+            overflow-x: auto;
+            scrollbar-width: none; /* Hide scrollbar for Firefox */
+        }
+
+        .category-tabs-container::-webkit-scrollbar {
+            display: none; /* Hide scrollbar for Chrome/Safari */
+        }
+
+        .tab-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            padding: 16px 28px;
+            font-family: var(--font-body);
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+            white-space: nowrap;
+        }
+
+        .tab-btn::after {
+            content: "";
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--accent);
+            transform: scaleX(0);
+            transition: var(--transition);
+        }
+
+        .tab-btn:hover {
+            color: var(--text-light);
+        }
+
+        .tab-btn.active {
+            color: var(--accent);
+        }
+
+        .tab-btn.active::after {
+            transform: scaleX(1);
+        }
+
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            min-height: 400px;
+        }
+
+        @media (max-width: 1200px) {
+            .products-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .product-card {
+            background-color: var(--primary-light);
+            border: 1px solid var(--border-dark);
+            border-radius: 4px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition);
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .product-card.hidden {
+            display: none;
+            opacity: 0;
+            transform: scale(0.8);
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            box-shadow: var(--shadow), 0 0 20px rgba(201, 168, 76, 0.05);
+        }
+
+        .product-category-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .product-icon {
+            width: 36px;
+            height: 36px;
+            fill: var(--text-light);
+            stroke: var(--text-light);
+            margin-bottom: 20px;
+            transition: var(--transition);
+        }
+
+        .product-card:hover .product-icon {
+            fill: var(--accent);
+            stroke: var(--accent);
+            transform: rotate(5deg);
+        }
+
+        .product-title {
+            font-size: 1.3rem;
+            color: var(--text-light);
+            margin-bottom: 12px;
+            font-family: var(--font-body);
+            font-weight: 500;
+        }
+
+        .product-desc {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            flex-grow: 1;
+        }
+
+
+        /* 7. INDUSTRIES WE SERVE SECTION */
+        .industries-section {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+        }
+
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        @media (max-width: 1024px) {
+            .industries-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .industries-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .industries-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .industry-card {
+            background-color: var(--bg-card-light);
+            border: 1px solid var(--border-light);
+            border-radius: 4px;
+            padding: 30px 24px;
+            text-align: center;
+            transition: var(--transition);
+            box-shadow: var(--shadow-light);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .industry-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            box-shadow: 0 15px 30px rgba(15, 20, 32, 0.06);
+        }
+
+        .industry-icon-wrapper {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background-color: rgba(30, 58, 95, 0.03);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            border: 1px solid transparent;
+            transition: var(--transition);
+        }
+
+        .industry-icon-wrapper svg {
+            width: 32px;
+            height: 32px;
+            fill: var(--primary-light);
+            transition: var(--transition);
+        }
+
+        .industry-card:hover .industry-icon-wrapper {
+            background-color: var(--primary);
+            border-color: var(--accent);
+        }
+
+        .industry-card:hover .industry-icon-wrapper svg {
+            fill: var(--accent);
+        }
+
+        .industry-name {
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: var(--primary);
+            font-family: var(--font-body);
+        }
+
+
+        /* 8. WHY CHOOSE US SECTION */
+        .why-choose-section {
+            background-color: var(--primary);
+            position: relative;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        @media (max-width: 1024px) {
+            .why-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .why-card {
+            background-color: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-dark);
+            border-radius: 4px;
+            padding: 40px 30px;
+            transition: var(--transition);
+        }
+
+        .why-card:hover {
+            background-color: rgba(255, 255, 255, 0.04);
+            border-color: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        .why-icon-box {
+            width: 56px;
+            height: 56px;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+        }
+
+        .why-icon-box svg {
+            width: 48px;
+            height: 48px;
+            fill: var(--accent);
+        }
+
+        .why-title {
+            font-size: 1.3rem;
+            color: var(--text-light);
+            margin-bottom: 16px;
+            font-family: var(--font-body);
+            font-weight: 500;
+        }
+
+        .why-desc {
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+
+        /* 9. CONTACT SECTION */
+        .contact-section {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 4fr 5fr;
+            gap: 80px;
+        }
+
+        @media (max-width: 992px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+        }
+
+        .contact-info-col {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .contact-text {
+            font-size: 1.15rem;
+            line-height: 1.6;
+            color: #4C5E76;
+            margin-bottom: 40px;
+        }
+
+        .contact-details-list {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        .contact-detail-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .contact-detail-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 4px;
+            background-color: rgba(30, 58, 95, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-detail-icon svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--primary-light);
+        }
+
+        .contact-detail-content h4 {
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin-bottom: 4px;
+            font-weight: 600;
+        }
+
+        .contact-detail-content p {
+            font-size: 1.05rem;
+            color: var(--primary);
+            font-weight: 400;
+        }
+
+        /* Form styling */
+        .contact-form-card {
+            background-color: var(--bg-card-light);
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-light);
+            border-radius: 4px;
+            padding: 48px;
+        }
+
+        @media (max-width: 480px) {
+            .contact-form-card {
+                padding: 30px 20px;
+            }
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+
+        .form-group {
+            position: relative;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #4C5E76;
+            margin-bottom: 8px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid rgba(15, 20, 32, 0.15);
+            border-radius: 4px;
+            background-color: #FFFFFF;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.15);
+        }
+
+        select.form-control {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M7%2010L12%2015L17%2010%22%20stroke%3D%22%234C5E76%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+            background-size: 18px;
+            padding-right: 40px;
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-submit-btn {
+            width: 100%;
+            border: none;
+        }
+
+
+        /* 10. FOOTER */
+        .footer {
+            background-color: #040911;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-dark);
+            position: relative;
+            padding: 40px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 4fr 2fr 2fr;
+            gap: 60px;
+            margin-bottom: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        .footer-brand-col {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .footer-logo-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+            color: var(--text-light);
+        }
+
+        .footer-logo {
+            height: 48px;
+            width: auto;
+            border-radius: 4px;
+            border: 1px solid var(--accent);
+            background-color: #FFFFFF;
+            padding: 2px;
+        }
+
+        .footer-brand-desc {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            max-width: 320px;
+        }
+
+        .footer-title {
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-light);
+            margin-bottom: 24px;
+        }
+
+        .footer-links-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-link-item a {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .footer-link-item a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-copyright {
+            font-size: 0.85rem;
+        }
+
+        .footer-decoration {
+            width: 80px;
+            height: auto;
+            opacity: 0.2;
+            fill: var(--text-muted);
+        }
+
+        @media (max-width: 576px) {
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. NAVBAR -->
+    <header class="navbar" id="navbar">
+        <div class="navbar-container">
+            <a href="#home" class="navbar-brand">
+                <img src="Final_Logo_3.jpg" alt="Shark Brews Logo" class="navbar-logo">
+                <span>Shark Brews International</span>
+            </a>
+            
+            <nav>
+                <ul class="navbar-menu" id="navbar-menu">
+                    <li><a href="#home" class="navbar-link active">Home</a></li>
+                    <li><a href="#about" class="navbar-link">About</a></li>
+                    <li><a href="#services" class="navbar-link">Services</a></li>
+                    <li><a href="#industries" class="navbar-link">Industries</a></li>
+                    <li><a href="#contact" class="navbar-link">Contact</a></li>
+                    <li class="navbar-cta-mobile" style="display: none; padding: 0 20px;">
+                        <a href="#contact" class="btn btn-accent" style="width: 100%; text-align: center;" onclick="toggleMenu()">Get a Quote</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="navbar-cta">
+                <a href="#contact" class="btn btn-accent">Get a Quote</a>
+            </div>
+
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle Navigation" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- 2. HERO SECTION -->
+    <section class="hero" id="home">
+        <canvas id="hero-canvas"></canvas>
+        <div class="hero-watermark"></div>
+        <div class="hero-container">
+            <h1 class="hero-heading" id="hero-title">
+                Where Technology<br><span class="accent-text">Meets Industry</span>
+            </h1>
+            <p class="hero-subheading" id="hero-subtitle">
+                From cutting-edge software solutions to heavy-duty industrial supply — Shark Brews International delivers excellence across every sector.
+            </p>
+            <div class="hero-ctas" id="hero-buttons">
+                <a href="#services" class="btn btn-accent">Explore Tech Services</a>
+                <a href="#industrial" class="btn btn-secondary">Explore Industrial Solutions</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. ABOUT SECTION -->
+    <section class="about-section" id="about">
+        <div class="section-container">
+            <div class="about-grid">
+                <div class="about-content-left reveal-left">
+                    <span class="about-pretitle">Powering Industries. Building Futures.</span>
+                    <h2 class="about-title">About Shark Brews International</h2>
+                    <div class="about-divider"></div>
+                    <p class="about-desc">
+                        Founded 5 years ago, Shark Brews International has grown from a specialized software company into a multi-industry powerhouse. We serve clients across the USA, UK, and India — from startups needing a digital presence to industrial giants like cement plants requiring complete hydraulic and sealing solutions.
+                    </p>
+                </div>
+                <div class="about-stats reveal-right">
+                    <div class="stat-item">
+                        <div class="stat-number-wrapper">
+                            <span class="stat-number" data-target="5">0</span><span class="stat-suffix">+</span>
+                        </div>
+                        <div class="stat-label">Years in Business</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number-wrapper">
+                            <span class="stat-number" data-target="2">0</span>
+                        </div>
+                        <div class="stat-label">Business Divisions</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number-wrapper">
+                            <span class="stat-number" data-target="3">0</span>
+                        </div>
+                        <div class="stat-label">Global Markets<br><span style="font-size: 0.75rem; text-transform: none; color: #8F9CAE; font-weight: normal;">(USA, UK & India)</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. DIVISIONS SECTION - "Our Two Pillars" -->
+    <section class="divisions-section" id="divisions">
+        <div class="section-container">
+            <div class="section-header reveal">
+                <h2 class="section-title">Our Two <span class="accent">Pillars</span></h2>
+                <p class="section-subtitle">A balanced expertise across cutting-edge digital technology and heavy industrial operations.</p>
+            </div>
+            
+            <div class="divisions-grid">
+                <!-- Tech Division Card -->
+                <div class="division-card division-card-tech reveal-left">
+                    <div class="division-header">
+                        <svg class="division-icon" viewBox="0 0 24 24">
+                            <path d="M20 18c1.1 0 1.99-.9 1.99-2L22 6c0-1.11-.9-2-2-2H4c-1.11 0-2 .89-2 2v10c0 1.1.89 2 2 2H0v2h24v-2h-4zM4 6h16v10H4V6z"/>
+                        </svg>
+                        <h3 class="division-name">Tech & Digital Services</h3>
+                        <p class="division-desc">Custom enterprise solutions, application design, and modern web systems designed to launch businesses globally and accelerate growth.</p>
+                    </div>
+                    <a href="#services" class="division-link">
+                        Learn More 
+                        <svg viewBox="0 0 24 24"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21.14 12l-8.29-8.29-1.42 1.42L16.86 11H5v2z"/></svg>
+                    </a>
+                </div>
+
+                <!-- Industrial Division Card -->
+                <div class="division-card division-card-industrial reveal-right">
+                    <div class="division-header">
+                        <svg class="division-icon" viewBox="0 0 24 24">
+                            <path d="M19.14,12.94c0.04-0.3,0.06-0.61,0.06-0.94c0-0.32-0.02-0.64-0.07-0.94l2.03-1.58c0.18-0.14,0.23-0.41,0.12-0.61 l-1.92-3.32c-0.12-0.22-0.37-0.29-0.59-0.22l-2.39,0.96c-0.5-0.38-1.03-0.7-1.62-0.94L14.4,2.81c-0.04-0.24-0.24-0.41-0.48-0.41 h-3.84c-0.24,0-0.43,0.17-0.47,0.41L9.25,5.35C8.66,5.59,8.12,5.92,7.63,6.29L5.24,5.33c-0.22-0.08-0.47,0-0.59,0.22L2.74,8.87 C2.62,9.08,2.66,9.34,2.86,9.48l2.03,1.58C4.84,11.36,4.8,11.69,4.8,12s0.02,0.64,0.07,0.94l-2.03,1.58 c-0.18,0.14-0.23,0.41-0.12,0.61l1.92,3.32c0.12,0.22,0.37,0.29,0.59,0.22l2.39-0.96c0.5,0.38,1.03,0.7,1.62,0.94l0.36,2.54 c0.05,0.24,0.24,0.41,0.48,0.41h3.84c0.24,0,0.43-0.17,0.47-0.41l0.36-2.54c0.59-0.24,1.13-0.56,1.62-0.94l2.39,0.96 c0.22,0.08,0.47,0,0.59-0.22l1.92-3.32c0.12-0.22,0.07-0.47-0.12-0.61L19.14,12.94z M12,15.6c-1.98,0-3.6-1.62-3.6-3.6 s1.62-3.6,3.6-3.6s3.6,1.62,3.6,3.6S13.98,15.6,12,15.6z"/>
+                        </svg>
+                        <h3 class="division-name">Industrial Solutions</h3>
+                        <p class="division-desc">Supplying heavy-duty industrial machinery parts, sealing systems, hydraulic equipment, and cooling system solutions to plants worldwide.</p>
+                    </div>
+                    <a href="#industrial" class="division-link">
+                        Learn More 
+                        <svg viewBox="0 0 24 24"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21.14 12l-8.29-8.29-1.42 1.42L16.86 11H5v2z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. TECH SERVICES SECTION -->
+    <section class="tech-services-section" id="services">
+        <div class="section-container">
+            <div class="section-header light-theme reveal">
+                <span class="about-pretitle">Tech & Digital Services</span>
+                <h2 class="section-title light-theme">Our Digital <span class="accent">Expertise</span></h2>
+                <p class="section-subtitle">We build world-class digital products for clients across India, USA, and UK.</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- 1. Web Dev -->
+                <div class="service-card reveal">
+                    <div class="service-icon-box">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Website Development</h3>
+                    <p class="service-desc">Custom enterprise portfolios, dynamic business landing sites, highly optimized portfolios, and tailored e-commerce platforms.</p>
+                </div>
+
+                <!-- 2. Mobile App -->
+                <div class="service-card reveal">
+                    <div class="service-icon-box">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Mobile App Development</h3>
+                    <p class="service-desc">High-performance iOS & Android native apps, and responsive cross-platform mobile solutions developed to feel native.</p>
+                </div>
+
+                <!-- 3. Web App -->
+                <div class="service-card reveal">
+                    <div class="service-icon-box">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM7 10h2v7H7zm4-3h2v10h-2zm4 6h2v4h-2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Web Application Development</h3>
+                    <p class="service-desc">Complex corporate web systems, software-as-a-service (SaaS) platforms, dynamic charts, and user-centric dashboards.</p>
+                </div>
+
+                <!-- 4. UI/UX Design -->
+                <div class="service-card reveal">
+                    <div class="service-icon-box">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2C6.49 2 2 6.49 2 12s4.49 10 10 10 10-4.49 10-10S17.51 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">UI/UX Design</h3>
+                    <p class="service-desc">User-centered creative interfaces, modern wireframes, interactive prototyping, and complete branding design systems.</p>
+                </div>
+
+                <!-- 5. E-Commerce -->
+                <div class="service-card reveal">
+                    <div class="service-icon-box">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">E-Commerce Solutions</h3>
+                    <p class="service-desc">Full-scale online storefronts, secure payment integrations, product catalog management, and sales workflows.</p>
+                </div>
+
+                <!-- 6. Maintenance -->
+                <div class="service-card reveal">
+                    <div class="service-icon-box">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Maintenance & Support</h3>
+                    <p class="service-desc">Ongoing updates, server monitoring, security patching, and scaling optimization for custom platforms.</p>
+                </div>
+            </div>
+
+            <div class="trusted-bar reveal">
+                <span>Trusted by clients in India, the United States, and the United Kingdom.</span>
+                <div class="flags-container">
+                    <!-- India SVG Flag -->
+                    <svg class="flag-icon" viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="900" height="200" fill="#FF9933"/>
+                        <rect y="200" width="900" height="200" fill="#FFFFFF"/>
+                        <rect y="400" width="900" height="200" fill="#138808"/>
+                        <circle cx="450" cy="300" r="80" fill="none" stroke="#000080" stroke-width="8"/>
+                        <circle cx="450" cy="300" r="16" fill="#000080"/>
+                        <path d="M 450,220 L 450,380 M 370,300 L 530,300 M 393.4,243.4 L 506.6,356.6 M 393.4,356.6 L 506.6,243.4 M 419.4,226.8 L 480.6,373.2 M 419.4,373.2 L 480.6,226.8 M 473.2,240.6 L 426.8,359.4 M 426.8,240.6 L 473.2,359.4 M 440,222.8 L 460,377.2 M 440,377.2 L 460,222.8 M 377.2,260 L 522.8,340 M 377.2,340 L 522.8,260 M 373.2,280.6 L 526.8,319.4 M 373.2,319.4 L 526.8,280.6" stroke="#000080" stroke-width="2"/>
+                    </svg>
+                    <!-- USA SVG Flag -->
+                    <svg class="flag-icon" viewBox="0 0 7410 3900" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="7410" height="3900" fill="#B22234"/>
+                        <path d="M0,300h7410 M0,900h7410 M0,1500h7410 M0,2100h7410 M0,2700h7410 M0,3300h7410" stroke="#FFFFFF" stroke-width="300"/>
+                        <rect width="2964" height="2100" fill="#3C3B6E"/>
+                        <!-- Star representation (simplified grid) -->
+                        <path d="M0,0h2964v2100H0Z" fill="#3C3B6E"/>
+                        <g fill="#FFFFFF">
+                            <!-- Simply drawing star matrices (custom path/circles to represent rows) -->
+                            <rect x="200" y="200" width="80" height="80" rx="40" />
+                            <rect x="600" y="200" width="80" height="80" rx="40" />
+                            <rect x="1000" y="200" width="80" height="80" rx="40" />
+                            <rect x="1400" y="200" width="80" height="80" rx="40" />
+                            <rect x="1800" y="200" width="80" height="80" rx="40" />
+                            <rect x="2200" y="200" width="80" height="80" rx="40" />
+                            <rect x="2600" y="200" width="80" height="80" rx="40" />
+                            <rect x="400" y="500" width="80" height="80" rx="40" />
+                            <rect x="800" y="500" width="80" height="80" rx="40" />
+                            <rect x="1200" y="500" width="80" height="80" rx="40" />
+                            <rect x="1600" y="500" width="80" height="80" rx="40" />
+                            <rect x="2000" y="500" width="80" height="80" rx="40" />
+                            <rect x="2400" y="500" width="80" height="80" rx="40" />
+                            <rect x="200" y="800" width="80" height="80" rx="40" />
+                            <rect x="600" y="800" width="80" height="80" rx="40" />
+                            <rect x="1000" y="800" width="80" height="80" rx="40" />
+                            <rect x="1400" y="800" width="80" height="80" rx="40" />
+                            <rect x="1800" y="800" width="80" height="80" rx="40" />
+                            <rect x="2200" y="800" width="80" height="80" rx="40" />
+                            <rect x="2600" y="800" width="80" height="80" rx="40" />
+                            <rect x="400" y="1100" width="80" height="80" rx="40" />
+                            <rect x="800" y="1100" width="80" height="80" rx="40" />
+                            <rect x="1200" y="1100" width="80" height="80" rx="40" />
+                            <rect x="1600" y="1100" width="80" height="80" rx="40" />
+                            <rect x="2000" y="1100" width="80" height="80" rx="40" />
+                            <rect x="2400" y="1100" width="80" height="80" rx="40" />
+                            <rect x="200" y="1400" width="80" height="80" rx="40" />
+                            <rect x="600" y="1400" width="80" height="80" rx="40" />
+                            <rect x="1000" y="1400" width="80" height="80" rx="40" />
+                            <rect x="1400" y="1400" width="80" height="80" rx="40" />
+                            <rect x="1800" y="1400" width="80" height="80" rx="40" />
+                            <rect x="2200" y="1400" width="80" height="80" rx="40" />
+                            <rect x="2600" y="1400" width="80" height="80" rx="40" />
+                            <rect x="400" y="1700" width="80" height="80" rx="40" />
+                            <rect x="800" y="1700" width="80" height="80" rx="40" />
+                            <rect x="1200" y="1700" width="80" height="80" rx="40" />
+                            <rect x="1600" y="1700" width="80" height="80" rx="40" />
+                            <rect x="2000" y="1700" width="80" height="80" rx="40" />
+                            <rect x="2400" y="1700" width="80" height="80" rx="40" />
+                        </g>
+                    </svg>
+                    <!-- UK SVG Flag -->
+                    <svg class="flag-icon" viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg">
+                        <clipPath id="s">
+                            <path d="M0,0 v30 h60 v-30 z"/>
+                        </clipPath>
+                        <clipPath id="t">
+                            <path d="M30,15 L0,0 v30 z M30,15 L60,0 v30 z M30,15 L0,0 h60 z M30,15 L0,30 h60 z"/>
+                        </clipPath>
+                        <g clip-path="url(#s)">
+                            <rect width="60" height="30" fill="#012169"/>
+                            <path d="M0,0 L60,30 M60,0 L0,30" stroke="#FFFFFF" stroke-width="6"/>
+                            <path d="M0,0 L60,30 M60,0 L0,30" stroke="#B22234" stroke-width="4" clip-path="url(#t)"/>
+                            <path d="M30,0 v30 M0,15 h60" stroke="#FFFFFF" stroke-width="10"/>
+                            <path d="M30,0 v30 M0,15 h60" stroke="#B22234" stroke-width="6"/>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. INDUSTRIAL SOLUTIONS SECTION -->
+    <section class="industrial-section noise-bg" id="industrial">
+        <div class="section-container" style="position: relative; z-index: 2;">
+            <div class="section-header reveal">
+                <span class="about-pretitle">Heavy-Duty Supply & Maintenance</span>
+                <h2 class="section-title">Industrial <span class="accent">Solutions</span></h2>
+                <p class="section-subtitle">Supplying and servicing heavy industry — from cement plants to construction machinery. Precision parts. Reliable supply. Expert repair.</p>
+            </div>
+
+            <!-- Tab Filtering Buttons -->
+            <div class="category-tabs-container reveal">
+                <button class="tab-btn active" onclick="filterCategory('all', this)">All Solutions</button>
+                <button class="tab-btn" onclick="filterCategory('seals', this)">Sealing Systems</button>
+                <button class="tab-btn" onclick="filterCategory('hydraulics', this)">Hydraulic Equipment</button>
+                <button class="tab-btn" onclick="filterCategory('cooling', this)">Heat Exchange</button>
+                <button class="tab-btn" onclick="filterCategory('transmission', this)">Power Transmission</button>
+            </div>
+
+            <!-- Products dynamic grid -->
+            <div class="products-grid">
+                
+                <!-- SEALS -->
+                <div class="product-card reveal" data-category="seals">
+                    <span class="product-category-label">Sealing Systems</span>
+                    <svg class="product-icon" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/>
+                        <circle cx="12" cy="12" r="6" fill="none" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    <h3 class="product-title">Hydraulic Seals</h3>
+                    <p class="product-desc">High-pressure seals specifically engineered for hydraulic cylinders in earthmoving and structural machinery.</p>
+                </div>
+
+                <div class="product-card reveal" data-category="seals">
+                    <span class="product-category-label">Sealing Systems</span>
+                    <svg class="product-icon" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/>
+                        <path d="M12 3v18M3 12h18" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    <h3 class="product-title">Pneumatic Seals</h3>
+                    <p class="product-desc">Precision dynamic sealing solutions optimized for pneumatic actuators, valves, and compression pistons.</p>
+                </div>
+
+                <div class="product-card reveal" data-category="seals">
+                    <span class="product-category-label">Sealing Systems</span>
+                    <svg class="product-icon" viewBox="0 0 24 24">
+                        <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12s4.48 10 10 10 10-4.48 10-10zm-10 8c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/>
+                        <path d="M12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 6c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/>
+                    </svg>
+                    <h3 class="product-title">Earthmoving Seal Kits</h3>
+                    <p class="product-desc">Complete, high-tolerance sealing kit solutions custom packaged for excavators, loaders, and crawler tractors.</p>
+                </div>
+
+                <!-- HYDRAULICS -->
+                <div class="product-card reveal" data-category="hydraulics">
+                    <span class="product-category-label">Hydraulic Equipment</span>
+                    <svg class="product-icon" viewBox="0 0 24 24">
+                        <rect x="2" y="8" width="16" height="8" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                        <line x1="18" y1="12" x2="22" y2="12" stroke="currentColor" stroke-width="3"/>
+                    </svg>
+                    <h3 class="product-title">Hydraulic Cylinders</h3>
+                    <p class="product-desc">Industrial-grade custom and standard double-acting hydraulic cylinders for heavy utility machinery.</p>
+                </div>
+
+                <div class="product-card reveal" data-category="hydraulics">
+                    <span class="product-category-label">Hydraulic Equipment</span>
+                    <svg class="product-icon" viewBox="0 0 24 24">
+                        <path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.3C.5 6.7.9 9.7 2.9 11.7c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.5z"/>
+                    </svg>
+                    <h3 class="product-title">Cylinder Repair</h3>
+                    <p class="product-desc">Comprehensive rebuild, re-honing, chroming, seal replacement, and digital pressure testing validation services.</p>
+                </div>
+
+                <div class="product-card reveal" data-category="hydraulics">
+                    <span class="product-category-label">Hydraulic Equipment</span>
+                    <!-- Lucide Cog icon -->
+                    <svg class="product-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="3"/>
+                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                    </svg>
+                    <h3 class="product-title">Hydraulic Pumps & Motor Repair</h3>
+                    <p class="product-desc">Professional repair and reconditioning of hydraulic pumps and motors for industrial machinery, restoring full performance and extending equipment life.</p>
+                </div>
+
+
+
+                <div class="product-card reveal" data-category="hydraulics">
+                    <span class="product-category-label">Hydraulic Equipment</span>
+                    <!-- Lucide Hand icon -->
+                    <svg class="product-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v5"/>
+                        <path d="M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v6"/>
+                        <path d="M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v8"/>
+                        <path d="M6 14v-1.5a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2V18a6 6 0 0 0 6 6h4a8 8 0 0 0 8-8v-3.5a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2"/>
+                    </svg>
+                    <h3 class="product-title">Hydraulic Hand Pumps</h3>
+                    <p class="product-desc">Ultra-reliable high-pressure manual hand pumps designed to supply pressure to hydraulic jacks and tooling.</p>
+                </div>
+
+                <div class="product-card reveal" data-category="hydraulics">
+                    <span class="product-category-label">Hydraulic Equipment</span>
+                    <!-- Lucide Zap icon -->
+                    <svg class="product-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                    </svg>
+                    <h3 class="product-title">Hydraulic Power Packs</h3>
+                    <p class="product-desc">Self-contained electro-hydraulic and diesel power pack units customized to meet high flow rates.</p>
+                </div>
+
+                <div class="product-card reveal" data-category="hydraulics">
+                    <span class="product-category-label">Hydraulic Equipment</span>
+                    <!-- Lucide ArrowUpFromLine icon -->
+                    <svg class="product-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m18 9-6-6-6 6"/>
+                        <path d="M12 3v12"/>
+                        <path d="M5 21h14"/>
+                    </svg>
+                    <h3 class="product-title">Hydraulic Jacks</h3>
+                    <p class="product-desc">High capacity industrial-grade bottle jacks, toe jacks, and hollow cylinders designed for critical heavy lifting operations.</p>
+                </div>
+
+                <div class="product-card reveal" data-category="hydraulics">
+                    <span class="product-category-label">Hydraulic Equipment</span>
+                    <!-- Lucide Droplets icon -->
+                    <svg class="product-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.09 3 12.25c0 2.22 1.8 4.05 4 4.05z"/>
+                        <path d="M17 18.5c1.37 0 2.5-1.14 2.5-2.53 0-.72-.35-1.41-1.07-1.99-.71-.58-1.25-1.22-1.43-2.13-.18.91-.72 1.55-1.43 2.13-.72.58-1.07 1.27-1.07 1.99 0 1.39 1.13 2.53 2.5 2.53z"/>
+                    </svg>
+                    <h3 class="product-title">Hydraulic Oil & Grease</h3>
+                    <p class="product-desc">Premium high-viscosity anti-wear hydraulic fluids and heat-stable greases to prevent plant wear and tear.</p>
+                </div>
+
+                <!-- COOLING -->
+                <div class="product-card reveal" data-category="cooling">
+                    <span class="product-category-label">Heat Exchange Systems</span>
+                    <!-- Lucide Cylinder icon -->
+                    <svg class="product-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <ellipse cx="12" cy="5" rx="9" ry="3"/>
+                        <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+                    </svg>
+                    <h3 class="product-title">Shell & Tube Exchangers</h3>
+                    <p class="product-desc">Engineered for extreme high pressure and thermal capacity. Handles massive volumes with extreme structural durability.</p>
+                </div>
+
+                <div class="product-card reveal" data-category="cooling">
+                    <span class="product-category-label">Heat Exchange Systems</span>
+                    <!-- Lucide LayoutGrid icon -->
+                    <svg class="product-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect width="7" height="7" x="3" y="3" rx="1"/>
+                        <rect width="7" height="7" x="14" y="3" rx="1"/>
+                        <rect width="7" height="7" x="14" y="14" rx="1"/>
+                        <rect width="7" height="7" x="3" y="14" rx="1"/>
+                    </svg>
+                    <h3 class="product-title">Plate Heat Exchangers</h3>
+                    <p class="product-desc">Ultra-compact plate heat transfer packs optimized for HVAC, chemical refining, and space-limited environments.</p>
+                </div>
+
+                <div class="product-card reveal" data-category="cooling">
+                    <span class="product-category-label">Heat Exchange Systems</span>
+                    <!-- Lucide Thermometer icon -->
+                    <svg class="product-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z"/>
+                    </svg>
+                    <h3 class="product-title">Cooling System Design</h3>
+                    <p class="product-desc">Turnkey cooling system plant engineering including radiator circuits, monitoring electronics, and dynamic supply valves.</p>
+                </div>
+
+                <!-- TRANSMISSION -->
+                <div class="product-card reveal" data-category="transmission">
+                    <span class="product-category-label">Gears & Power Transmission</span>
+                    <svg class="product-icon" viewBox="0 0 24 24">
+                        <path d="M19.14 12.94c.04-.3.06-.61.06-.94s-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .43-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/>
+                    </svg>
+                    <h3 class="product-title">Gears & Gear Parts</h3>
+                    <p class="product-desc">Heavy industrial spur gears, helical gears, and transmission teeth engineered for heavy-duty rotary machineries.</p>
+                </div>
+
+                <div class="product-card reveal" data-category="transmission">
+                    <span class="product-category-label">Gears & Power Transmission</span>
+                    <svg class="product-icon" viewBox="0 0 24 24">
+                        <circle cx="9" cy="10" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
+                        <path d="M9 4v2M9 14v2M3 10h2M13 10h2M4.8 5.8l1.4 1.4M11.8 12.8l1.4 1.4M4.8 14.2l1.4-1.4M11.8 7.2l1.4-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <circle cx="16" cy="16" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                        <path d="M16 12v1M16 19v1M12 16h1M19 16h1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M21 4.5l-3.5 3.5M16 8l1.5-1.5 1 1-1.5 1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <h3 class="product-title">Gearbox Repair</h3>
+                    <p class="product-desc">Expert gearbox inspection, rebuilding, and repair services for heavy-duty industrial gearboxes used in cement plants, construction equipment, and manufacturing machinery.</p>
+                </div>
+
+            </div>
+
+            <!-- Online Catalogue CTA Button -->
+            <div style="display: flex; justify-content: center; margin-top: 60px;" class="reveal">
+                <a href="catalogue.html" target="_blank" class="btn btn-accent" style="font-size: 1.1rem; padding: 18px 36px; gap: 12px; display: inline-flex; align-items: center; border-radius: 4px; box-shadow: 0 10px 25px rgba(201, 168, 76, 0.2);">
+                    <svg viewBox="0 0 24 24" style="width: 24px; height: 24px; fill: currentColor;">
+                        <path d="M19 19H5v-2h14v2zm-7-4l-5-5h3V3h4v8h3l-5 5z"/>
+                    </svg>
+                    Explore Full Product Catalogue
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. INDUSTRIES WE SERVE SECTION -->
+    <section class="industries-section" id="industries">
+        <div class="section-container">
+            <div class="section-header light-theme reveal">
+                <span class="about-pretitle">Sectors We Empower</span>
+                <h2 class="section-title light-theme">Industries We <span class="accent">Serve</span></h2>
+                <p class="section-subtitle">Delivering critical mechanical systems and cutting-edge software suites to diverse global industries.</p>
+            </div>
+
+            <div class="industries-grid">
+                <!-- 1. Cement -->
+                <div class="industry-card reveal">
+                    <div class="industry-icon-wrapper">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 3L2 12h3v8h14v-8h3L12 3zm0 13c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/>
+                        </svg>
+                    </div>
+                    <h3 class="industry-name">Cement Plants</h3>
+                </div>
+
+                <!-- 2. Construction -->
+                <div class="industry-card reveal">
+                    <div class="industry-icon-wrapper">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M22 17.5c0-.83-.67-1.5-1.5-1.5H19v-2c0-.55-.45-1-1-1h-2c-.55 0-1 .45-1 1v2H9v-5c0-.55-.45-1-1-1H6c-.55 0-1 .45-1 1v5H3.5c-.83 0-1.5.67-1.5 1.5V19h20v-1.5z"/>
+                        </svg>
+                    </div>
+                    <h3 class="industry-name">Construction & Earthmoving</h3>
+                </div>
+
+                <!-- 3. Manufacturing -->
+                <div class="industry-card reveal">
+                    <div class="industry-icon-wrapper">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M22 10v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2h4l2.5-3.5L14 8h8a2 2 0 0 1 2 2zM6 14h2v4H6v-4zm6-3h2v7h-2v-7zm6 3h2v4h-2v-4z"/>
+                        </svg>
+                    </div>
+                    <h3 class="industry-name">Manufacturing</h3>
+                </div>
+
+                <!-- 4. Power & Energy -->
+                <div class="industry-card reveal">
+                    <div class="industry-icon-wrapper">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M19 11.5h-4.57l3.77-7.55c.22-.44-.1-.95-.6-.95H8.76c-.4 0-.75.25-.89.62L5.05 13.3c-.17.43.15.9.61.9h4.3l-3.32 7.73c-.23.53.28 1.07.78.85l11.19-10.45c.49-.46.16-1.33-.61-1.33z"/>
+                        </svg>
+                    </div>
+                    <h3 class="industry-name">Power & Energy</h3>
+                </div>
+
+                <!-- 5. Oil & Gas -->
+                <div class="industry-card reveal">
+                    <div class="industry-icon-wrapper">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 19.4c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l2.78-2.78C10.08 18.66 11.02 19 12 19c4.97 0 9-4.03 9-9s-4.03-9-9-9zm0 15c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"/>
+                        </svg>
+                    </div>
+                    <h3 class="industry-name">Oil & Gas / Chemical</h3>
+                </div>
+
+                <!-- 6. Technology -->
+                <div class="industry-card reveal">
+                    <div class="industry-icon-wrapper">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-6h2v6zm0-8h-2V7h2v4z"/>
+                        </svg>
+                    </div>
+                    <h3 class="industry-name">Technology & SaaS</h3>
+                </div>
+
+                <!-- 7. E-Commerce -->
+                <div class="industry-card reveal">
+                    <div class="industry-icon-wrapper">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-5 14H4v-4h11v4zm0-5H4V9h11v4zm5 5h-4V9h4v9z"/>
+                        </svg>
+                    </div>
+                    <h3 class="industry-name">E-Commerce & Retail</h3>
+                </div>
+
+                <!-- 8. Startups -->
+                <div class="industry-card reveal">
+                    <div class="industry-icon-wrapper">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2.27l8.13 14.19H3.87L12 2.27z"/>
+                        </svg>
+                    </div>
+                    <h3 class="industry-name">Startups & SMEs</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. WHY CHOOSE US SECTION -->
+    <section class="why-choose-section" id="why">
+        <div class="section-container">
+            <div class="section-header reveal">
+                <span class="about-pretitle">Core Advantages</span>
+                <h2 class="section-title">Why Shark Brews <span class="accent">International?</span></h2>
+                <p class="section-subtitle">Built on a solid foundation of dual capabilities, engineering precision, and a stellar global service track record.</p>
+            </div>
+
+            <div class="why-grid">
+                <!-- 1 -->
+                <div class="why-card reveal">
+                    <div class="why-icon-box">
+                        <!-- Shark Shield Silhouette -->
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2c-4.97 0-9 4.03-9 9 0 5.25 9 11 9 11s9-5.75 9-11c0-4.97-4.03-9-9-9zm0 15c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"/>
+                        </svg>
+                    </div>
+                    <h3 class="why-title">5 Years of Excellence</h3>
+                    <p class="why-desc">Trusted by industrial giants and global digital enterprises alike. A solid history of quality products and execution.</p>
+                </div>
+
+                <!-- 2 -->
+                <div class="why-card reveal">
+                    <div class="why-icon-box">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                        </svg>
+                    </div>
+                    <h3 class="why-title">Global Reach</h3>
+                    <p class="why-desc">Actively serving startups, mid-market businesses, and large corporate manufacturing industries across USA, UK, and India.</p>
+                </div>
+
+                <!-- 3 -->
+                <div class="why-card reveal">
+                    <div class="why-icon-box">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M19.14 12.94c.04-.3.06-.61.06-.94s-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.65c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.09-.49 0-.61.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .43-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/>
+                        </svg>
+                    </div>
+                    <h3 class="why-title">Dual Expertise</h3>
+                    <p class="why-desc">Uniquely positioned at the intersection of technology and heavy industry to modernise mechanical operations with custom software.</p>
+                </div>
+
+                <!-- 4 -->
+                <div class="why-card reveal">
+                    <div class="why-icon-box">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                        </svg>
+                    </div>
+                    <h3 class="why-title">End-to-End Solutions</h3>
+                    <p class="why-desc">From initial digital consultation to structural industrial repairs and seal fittings — we cover the full cycle of your needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. CONTACT SECTION -->
+    <section class="contact-section" id="contact">
+        <div class="section-container">
+            <div class="section-header light-theme reveal">
+                <span class="about-pretitle">Start Your Project</span>
+                <h2 class="section-title light-theme">Let's Work <span class="accent">Together</span></h2>
+                <p class="section-subtitle">Have a project scope or parts replacement list? Fill out our service inquiry to request quotes.</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info-col reveal-left">
+                    <p class="contact-text">
+                        Whether you need a cutting-edge website or a complete hydraulic solution for your plant — we're ready. Reach out and let's discuss your requirements.
+                    </p>
+
+                    <div class="contact-details-list">
+                        <!-- Details -->
+                        <div class="contact-detail-item">
+                            <div class="contact-detail-icon">
+                                <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                            </div>
+                            <div class="contact-detail-content">
+                                <h4>Email Us</h4>
+                                <p style="font-size: 0.95rem; margin-bottom: 6px;">sharkbrewsinternational@gmail.com <span style="font-size: 0.8rem; color: #627288; font-weight: 300;">(For IT Services)</span></p>
+                                <p style="font-size: 0.95rem;">sharkbrewsindia@gmail.com <span style="font-size: 0.8rem; color: #627288; font-weight: 300;">(For Industrial Services)</span></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-detail-item">
+                            <div class="contact-detail-icon">
+                                <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                            </div>
+                            <div class="contact-detail-content">
+                                <h4>Call Office</h4>
+                                <p style="font-size: 0.95rem; margin-bottom: 6px;">+91-7583032049 <span style="font-size: 0.8rem; color: #627288; font-weight: 300;">(For IT Services)</span></p>
+                                <p style="font-size: 0.95rem;">+91-9300763304 <span style="font-size: 0.8rem; color: #627288; font-weight: 300;">(For Industrial Services)</span></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-detail-item">
+                            <div class="contact-detail-icon">
+                                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                            </div>
+                            <div class="contact-detail-content">
+                                <h4>Locations</h4>
+                                <p>Bhopal, M.P. | Gurugram, Haryana</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form Card -->
+                <div class="contact-form-card reveal-right">
+                    <form id="contactForm" onsubmit="handleFormSubmit(event)">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="name" class="form-label">Full Name</label>
+                                <input type="text" id="name" name="name" class="form-control" placeholder="John Doe" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" id="email" name="email" class="form-control" placeholder="john@example.com" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone" class="form-label">Phone</label>
+                                <input type="tel" id="phone" name="phone" class="form-control" placeholder="+91-9090909090" pattern="[0-9\-\+\s]{10,20}" title="Please enter a valid phone number (at least 10 digits)" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="interest" class="form-label">Service Interest</label>
+                                <select id="interest" name="interest" class="form-control" required>
+                                    <option value="" disabled selected>Select an option</option>
+                                    <option value="tech">Tech & Digital Services</option>
+                                    <option value="industrial">Industrial Solutions</option>
+                                    <option value="both">Both Business Divisions</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message" class="form-label">Message Details</label>
+                                <textarea id="message" name="message" class="form-control" placeholder="Tell us about your project, service requirement, or material needs..." required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-accent form-submit-btn">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. FOOTER -->
+    <footer class="footer">
+        <div class="section-container">
+            <div class="footer-grid">
+                
+                <div class="footer-brand-col">
+                    <div class="footer-logo-wrapper">
+                        <img src="Final_Logo_3.jpg" alt="Shark Brews International" class="footer-logo">
+                        <span>Shark Brews International</span>
+                    </div>
+                    <p class="footer-brand-desc">
+                        A dual-division global partner providing premium IT systems and authoritative heavy industrial mechanical fittings.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="footer-title">Tech Services</h4>
+                    <ul class="footer-links-list">
+                        <li class="footer-link-item"><a href="#services">Website Development</a></li>
+                        <li class="footer-link-item"><a href="#services">Mobile App Dev</a></li>
+                        <li class="footer-link-item"><a href="#services">Web Applications</a></li>
+                        <li class="footer-link-item"><a href="#services">UI/UX Strategy</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer-title">Industrial Solutions</h4>
+                    <ul class="footer-links-list">
+                        <li class="footer-link-item"><a href="#industrial" onclick="scrollToIndustrial('seals')">Sealing Systems</a></li>
+                        <li class="footer-link-item"><a href="#industrial" onclick="scrollToIndustrial('hydraulics')">Hydraulic Parts</a></li>
+                        <li class="footer-link-item"><a href="#industrial" onclick="scrollToIndustrial('cooling')">Heat Exchange</a></li>
+                        <li class="footer-link-item"><a href="#industrial" onclick="scrollToIndustrial('transmission')">Power Transmission</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    Shark Brews International © 2026. All Rights Reserved.
+                </div>
+                
+                <!-- Decorative Shark Wave/Fin Silhouette Inline SVG -->
+                <svg class="footer-decoration" viewBox="0 0 100 30" width="80px">
+                    <path d="M 0 30 C 30 30, 40 20, 50 10 C 55 5, 58 0, 60 0 C 62 0, 63 5, 62 10 C 60 20, 70 30, 100 30 Z" fill="currentColor"/>
+                </svg>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Actions -->
+    <script>
+        // Hamburger toggle function
+        function toggleMenu() {
+            const toggleBtn = document.getElementById('nav-toggle');
+            const menu = document.getElementById('navbar-menu');
+            toggleBtn.classList.toggle('open');
+            menu.classList.toggle('open');
+        }
+
+        // Close menu on link click on mobile
+        document.querySelectorAll('.navbar-link').forEach(link => {
+            link.addEventListener('click', () => {
+                const toggleBtn = document.getElementById('nav-toggle');
+                const menu = document.getElementById('navbar-menu');
+                if (menu.classList.contains('open')) {
+                    toggleBtn.classList.remove('open');
+                    menu.classList.remove('open');
+                }
+            });
+        });
+
+        // Frosted Navbar on Scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+            updateActiveNavLink();
+        });
+
+        // Dynamic Nav Link highlighting based on section intersection
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.navbar-link');
+
+        function updateActiveNavLink() {
+            let current = "";
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= (sectionTop - 150)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        // Category Filter for Industrial Solutions
+        function filterCategory(category, element) {
+            // Update Active Tab Button styling
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            element.classList.add('active');
+
+            // Filter cards
+            const cards = document.querySelectorAll('.product-card');
+            cards.forEach(card => {
+                const cardCategory = card.getAttribute('data-category');
+                
+                // Reset card reveal animation class triggers
+                card.classList.remove('active');
+                
+                if (category === 'all' || cardCategory === category) {
+                    card.classList.remove('hidden');
+                    // Retrigger animation
+                    setTimeout(() => {
+                        card.classList.add('active');
+                    }, 50);
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        }
+
+        // Link in footer to navigate and automatically filter industrial products
+        function scrollToIndustrial(category) {
+            const targetBtn = Array.from(document.querySelectorAll('.tab-btn')).find(btn => {
+                const clickAttr = btn.getAttribute('onclick');
+                return clickAttr && clickAttr.includes(category);
+            });
+            if (targetBtn) {
+                targetBtn.click();
+            }
+        }
+
+        // Contact form submission handler
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const form = event.target;
+            
+            // Validate form inputs using native validation bubbles
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+
+            const submitBtn = form.querySelector('.form-submit-btn');
+            
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = "Sending Message...";
+            submitBtn.style.opacity = "0.7";
+            submitBtn.disabled = true;
+
+            // Simulating API network submission latency
+            setTimeout(() => {
+                // Success state response
+                const card = document.querySelector('.contact-form-card');
+                card.innerHTML = `
+                    <div style="text-align: center; padding: 40px 10px;">
+                        <svg style="width: 60px; height: 60px; fill: var(--accent); margin-bottom: 24px;" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                        <h3 style="font-size: 1.8rem; margin-bottom: 12px; color: var(--primary);">Thank You!</h3>
+                        <p style="color: #4C5E76; margin-bottom: 24px;">Your inquiry has been successfully sent. A division specialist will contact you shortly.</p>
+                        <button onclick="resetContactForm()" class="btn btn-secondary" style="border-color: var(--primary); color: var(--primary);">Send Another Message</button>
+                    </div>
+                `;
+            }, 1500);
+        }
+
+        // Allow form resetting
+        function resetContactForm() {
+            location.reload();
+        }
+
+        /* Counters scrolling animation */
+        let countersTriggered = false;
+        
+        function runCounters() {
+            if (countersTriggered) return;
+            countersTriggered = true;
+
+            const counterElements = document.querySelectorAll('.stat-number');
+            counterElements.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                const duration = 2000; // 2 seconds counting animation duration
+                const startTime = performance.now();
+
+                function updateCount(currentTime) {
+                    const elapsed = currentTime - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    
+                    // Cubic easeOut for counters
+                    const easeProgress = 1 - Math.pow(1 - progress, 3);
+                    const currentVal = Math.floor(easeProgress * target);
+                    
+                    counter.textContent = currentVal;
+
+                    if (progress < 1) {
+                        requestAnimationFrame(updateCount);
+                    } else {
+                        counter.textContent = target; // force absolute matching
+                    }
+                }
+
+                requestAnimationFrame(updateCount);
+            });
+        }
+
+        /* Scroll-triggered reveal observer */
+        const revealOptions = {
+            threshold: 0.15,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    
+                    // If the about section stats card container intersects, run counters
+                    if (entry.target.classList.contains('about-stats')) {
+                        runCounters();
+                    }
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, revealOptions);
+
+        // Bind sections/headers/elements to observer
+        document.addEventListener("DOMContentLoaded", () => {
+            // Reveal items
+            document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .section-header, .about-content-left, .about-stats').forEach(el => {
+                revealObserver.observe(el);
+            });
+
+            // Trigger hero section animations immediately
+            setTimeout(() => {
+                document.getElementById('hero-title').classList.add('active');
+                document.getElementById('hero-subtitle').classList.add('active');
+                document.getElementById('hero-buttons').classList.add('active');
+            }, 100);
+
+            // Initialize canvas particles
+            initCanvasParticles();
+        });
+
+
+        /* CUSTOM CANVAS HERO PARTICLES EFFECT */
+        function initCanvasParticles() {
+            const canvas = document.getElementById('hero-canvas');
+            const ctx = canvas.getContext('2d');
+
+            let width = canvas.width = window.innerWidth;
+            let height = canvas.height = window.innerHeight;
+
+            const particles = [];
+            const particleCount = Math.min(Math.floor((width * height) / 15000), 100); // Dynamic count based on size
+            const connectionDistance = 120;
+            const speedScale = 0.5;
+
+            // Mouse tracking
+            let mouse = { x: null, y: null, active: false };
+
+            window.addEventListener('mousemove', (e) => {
+                mouse.x = e.clientX;
+                mouse.y = e.clientY;
+                mouse.active = true;
+            });
+
+            window.addEventListener('mouseleave', () => {
+                mouse.active = false;
+            });
+
+            window.addEventListener('resize', () => {
+                width = canvas.width = window.innerWidth;
+                height = canvas.height = window.innerHeight;
+            });
+
+            // Particle Class
+            class Particle {
+                constructor() {
+                    this.x = Math.random() * width;
+                    this.y = Math.random() * height;
+                    this.vx = (Math.random() - 0.5) * speedScale;
+                    this.vy = (Math.random() - 0.5) * speedScale;
+                    this.radius = Math.random() * 2 + 1; // 1px to 3px
+                    this.baseColor = 'rgba(201, 168, 76, 0.4)'; // Gold hue translucent
+                }
+
+                update() {
+                    this.x += this.vx;
+                    this.y += this.vy;
+
+                    // Bounce walls
+                    if (this.x < 0 || this.x > width) this.vx *= -1;
+                    if (this.y < 0 || this.y > height) this.vy *= -1;
+
+                    // Gravitate to mouse if active
+                    if (mouse.active) {
+                        const dx = mouse.x - this.x;
+                        const dy = mouse.y - this.y;
+                        const dist = Math.sqrt(dx*dx + dy*dy);
+                        if (dist < 200) {
+                            this.x += dx * 0.005;
+                            this.y += dy * 0.005;
+                        }
+                    }
+                }
+
+                draw() {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = this.baseColor;
+                    ctx.fill();
+                }
+            }
+
+            // Create loop
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new Particle());
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, width, height);
+
+                // Update & draw particles
+                particles.forEach(p => {
+                    p.update();
+                    p.draw();
+                });
+
+                // Connections
+                for (let i = 0; i < particles.length; i++) {
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const dx = particles[i].x - particles[j].x;
+                        const dy = particles[i].y - particles[j].y;
+                        const dist = Math.sqrt(dx*dx + dy*dy);
+
+                        if (dist < connectionDistance) {
+                            const opacity = (1 - (dist / connectionDistance)) * 0.15;
+                            ctx.beginPath();
+                            ctx.moveTo(particles[i].x, particles[i].y);
+                            ctx.lineTo(particles[j].x, particles[j].y);
+                            
+                            // Blend tech connection color (gold to steel blue transition link)
+                            ctx.strokeStyle = `rgba(201, 168, 76, ${opacity})`;
+                            ctx.lineWidth = 0.5;
+                            ctx.stroke();
+                        }
+                    }
+
+                    // Mouse connections
+                    if (mouse.active) {
+                        const dx = particles[i].x - mouse.x;
+                        const dy = particles[i].y - mouse.y;
+                        const dist = Math.sqrt(dx*dx + dy*dy);
+
+                        if (dist < 150) {
+                            const opacity = (1 - (dist / 150)) * 0.2;
+                            ctx.beginPath();
+                            ctx.moveTo(particles[i].x, particles[i].y);
+                            ctx.lineTo(mouse.x, mouse.y);
+                            ctx.strokeStyle = `rgba(30, 58, 95, ${opacity})`;
+                            ctx.lineWidth = 0.8;
+                            ctx.stroke();
+                        }
+                    }
+                }
+
+                requestAnimationFrame(animate);
+            }
+
+            animate();
+        }
+    </script>
+</body>
+</html>
