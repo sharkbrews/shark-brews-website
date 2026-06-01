@@ -349,7 +349,7 @@
 
             @page {
                 size: A4 portrait;
-                margin: 25mm 15mm 20mm 15mm;
+                margin: 12mm 15mm 12mm 15mm;
             }
 
             body {
@@ -358,7 +358,7 @@
                 font-size: 10pt !important;
                 padding: 0 !important;
                 margin: 0 !important;
-                line-height: 1.5 !important;
+                line-height: 1.4 !important;
             }
 
             .catalogue-container {
@@ -369,27 +369,33 @@
 
             .catalogue-header {
                 border-bottom: 2px solid #0A1420 !important;
-                margin-bottom: 25px !important;
-                padding-bottom: 15px !important;
+                margin-bottom: 20px !important;
+                padding-bottom: 12px !important;
                 page-break-after: avoid !important;
                 page-break-inside: avoid !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                text-align: center !important;
             }
 
             .company-name {
                 color: #0A1420 !important;
+                font-size: 2rem !important;
             }
 
             .intro-line {
                 color: #C9A84C !important;
+                font-size: 1rem !important;
             }
 
             /* Banners */
             .section-banner {
                 background-color: #0A1420 !important;
                 border-left: 6px solid #C9A84C !important;
-                margin-top: 25px !important;
-                margin-bottom: 15px !important;
-                padding: 10px 18px !important;
+                margin-top: 20px !important;
+                margin-bottom: 12px !important;
+                padding: 8px 16px !important;
                 box-shadow: none !important;
                 page-break-after: avoid !important;
                 page-break-inside: avoid !important;
@@ -397,9 +403,13 @@
 
             .section-banner h2 {
                 color: #FFFFFF !important;
-                font-size: 15pt !important;
+                font-size: 13.5pt !important;
             }
 
+            .section-banner span {
+                color: #C9A84C !important;
+                font-size: 8pt !important;
+            }
 
             /* Side-by-side stretching layout in print */
             .catalogue-card {
@@ -409,7 +419,7 @@
                 background-color: #F8FAFC !important;
                 border: 1px solid #E2E8F0 !important;
                 border-radius: 4px !important;
-                margin-bottom: 18px !important;
+                margin-bottom: 12px !important;
                 box-shadow: none !important;
                 page-break-inside: avoid !important;
                 overflow: hidden !important;
@@ -420,11 +430,11 @@
             }
 
             .card-img-wrapper {
-                flex: 0 0 35% !important;
-                width: 35% !important;
+                flex: 0 0 32% !important;
+                width: 32% !important;
                 position: relative !important;
                 align-self: stretch !important;
-                min-height: 100% !important;
+                min-height: 140px !important;
                 height: auto !important;
                 background-color: #F8FAFC !important;
                 overflow: hidden !important;
@@ -441,9 +451,9 @@
             }
 
             .card-text-wrapper {
-                flex: 0 0 65% !important;
-                width: 65% !important;
-                padding: 20px 25px !important;
+                flex: 0 0 68% !important;
+                width: 68% !important;
+                padding: 12px 20px !important;
                 background-color: #F8FAFC !important;
                 display: flex !important;
                 flex-direction: column !important;
@@ -453,30 +463,53 @@
 
             .card-service-title {
                 color: #0A1420 !important;
-                font-size: 12.5pt !important;
-                margin-bottom: 6px !important;
+                font-size: 11.5pt !important;
+                margin-bottom: 4px !important;
+            }
+
+            .card-service-title span.number-badge {
+                color: #C9A84C !important;
+                border-right: 1px solid #E2E8F0 !important;
+                padding-right: 10px !important;
             }
 
             .card-desc {
                 color: #334155 !important;
-                font-size: 9pt !important;
-                line-height: 1.4 !important;
+                font-size: 8.5pt !important;
+                line-height: 1.35 !important;
             }
 
             /* Footer */
             .catalogue-footer {
                 border-top: 1px solid #E2E8F0 !important;
-                margin-top: 30px !important;
-                padding-top: 20px !important;
+                margin-top: 20px !important;
+                padding-top: 15px !important;
                 page-break-inside: avoid !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+            }
+
+            .footer-logo-row {
+                color: #0A1420 !important;
             }
 
             .footer-enquiry-line {
                 color: #0A1420 !important;
+                font-size: 11pt !important;
+            }
+
+            .footer-enquiry-line span {
+                color: #C9A84C !important;
             }
 
             .footer-contact-details {
                 color: #475569 !important;
+                display: flex !important;
+                justify-content: center !important;
+                gap: 30px !important;
+                flex-wrap: wrap !important;
+                font-size: 9pt !important;
             }
 
             /* Force color adjust */
@@ -565,120 +598,104 @@
             </article>
 
             
-            <!-- SECTION 2 — Hydraulic Equipment -->
+            <!-- SECTION 2 — Fluid Power Systems -->
             <div class="section-banner">
                 <span>Category 02</span>
-                <h2>Hydraulic Equipment</h2>
+                <h2>Fluid Power Systems</h2>
             </div>
 
-            <!-- 4. Hydraulic Cylinders -->
+            <!-- 04. Hydraulic Cylinders - Supply & Repair -->
             <article class="catalogue-card">
                 <div class="card-img-wrapper">
-                    <img class="card-img" src="hydraulic_cylinders.png" alt="Hydraulic Cylinders">
+                    <img class="card-img" src="hydraulic_cylinders.png" alt="Hydraulic Cylinders - Supply & Repair">
                 </div>
                 <div class="card-text-wrapper">
                     <h3 class="card-service-title">
                         <span class="number-badge">04</span>
-                        Hydraulic Cylinders
+                        Hydraulic Cylinders - Supply &amp; Repair
                     </h3>
                     <p class="card-desc">
-                        Standard and custom-built hydraulic cylinders for a wide range of industrial applications. Built for high-pressure performance, precision stroke control, and long operational life in demanding environments.
+                        Industrial-grade new and reconditioned hydraulic cylinders with chroming, honing, seal replacement, and pressure testing.
                     </p>
                 </div>
             </article>
 
-            <!-- 5. Hydraulic Cylinder Repair -->
+            <!-- 05. Pneumatic Cylinders - Supply & Repair -->
             <article class="catalogue-card">
                 <div class="card-img-wrapper">
-                    <img class="card-img" src="cylinder_repair.png" alt="Hydraulic Cylinder Repair">
+                    <img class="card-img" src="pneumatic_cylinders.png" alt="Pneumatic Cylinders - Supply & Repair">
                 </div>
                 <div class="card-text-wrapper">
                     <h3 class="card-service-title">
                         <span class="number-badge">05</span>
-                        Hydraulic Cylinder Repair
+                        Pneumatic Cylinders - Supply &amp; Repair
                     </h3>
                     <p class="card-desc">
-                        Expert reconditioning and repair of hydraulic cylinders including seal replacement, chrome re-plating, honing, and full pressure testing. We restore cylinders to OEM specifications, saving cost over full replacement.
+                        Industrial-grade precision pneumatic cylinders for automation and machinery with seal replacement, bore honing, refurbishment, and performance testing.
                     </p>
                 </div>
             </article>
 
-            <!-- 6. Hydraulic Pumps & Motor Repair -->
+            <!-- 06. Hydraulic Pumps & Motors - Supply & Repair -->
             <article class="catalogue-card">
                 <div class="card-img-wrapper">
-                    <img class="card-img" src="pump_motor_repair.png" alt="Hydraulic Pumps & Motor Repair">
+                    <img class="card-img" src="pump_motor_repair.png" alt="Hydraulic Pumps & Motors - Supply & Repair">
                 </div>
                 <div class="card-text-wrapper">
                     <h3 class="card-service-title">
                         <span class="number-badge">06</span>
-                        Hydraulic Pumps &amp; Motor Repair
+                        Hydraulic Pumps &amp; Motors - Supply &amp; Repair
                     </h3>
                     <p class="card-desc">
-                        Professional repair and reconditioning of hydraulic pumps and motors of all makes and models. Our technicians diagnose, rebuild, and test units to ensure full restoration of flow rate, pressure, and efficiency.
+                        Professional repair and reconditioning for industrial machinery, restoring full performance and extending equipment life plus new unit supply in multiple configurations.
                     </p>
                 </div>
             </article>
 
-            <!-- 7. Hydraulic Hand Pumps -->
+            <!-- 07. Hydraulic Hand Pumps & Jacks -->
             <article class="catalogue-card">
                 <div class="card-img-wrapper">
-                    <img class="card-img" src="hydraulic_hand_pump.png" alt="Hydraulic Hand Pumps">
+                    <img class="card-img" src="hydraulic_hand_pumps_jacks.png" alt="Hydraulic Hand Pumps & Jacks">
                 </div>
                 <div class="card-text-wrapper">
                     <h3 class="card-service-title">
                         <span class="number-badge">07</span>
-                        Hydraulic Hand Pumps
+                        Hydraulic Hand Pumps &amp; Jacks
                     </h3>
                     <p class="card-desc">
-                        Portable and robust hydraulic hand pumps for use in maintenance, field operations, and light industrial tasks. Available in single and double-acting models with various reservoir capacities.
+                        Industrial hydraulic hand pumps and jacks ranging from 10 Ton to 1000 Ton capacity for lifting, maintenance, and heavy-duty applications.
                     </p>
                 </div>
             </article>
 
-            <!-- 8. Hydraulic Power Packs -->
+            <!-- 08. Power Packs -->
             <article class="catalogue-card">
                 <div class="card-img-wrapper">
-                    <img class="card-img" src="hydraulic_power_packs.png" alt="Hydraulic Power Packs">
+                    <img class="card-img" src="hydraulic_power_packs.png" alt="Power Packs">
                 </div>
                 <div class="card-text-wrapper">
                     <h3 class="card-service-title">
                         <span class="number-badge">08</span>
-                        Hydraulic Power Packs
+                        Power Packs
                     </h3>
                     <p class="card-desc">
-                        Complete hydraulic power pack systems combining pump, motor, reservoir, and control valves in a single compact unit. Custom-built to meet specific flow and pressure requirements for industrial machinery.
+                        Self-contained electro-hydraulic and diesel power pack units customized to your flow and pressure requirements.
                     </p>
                 </div>
             </article>
 
-            <!-- 9. Hydraulic Jacks -->
-            <article class="catalogue-card">
-                <div class="card-img-wrapper">
-                    <img class="card-img" src="hydraulic_jacks.png" alt="Hydraulic Jacks">
-                </div>
-                <div class="card-text-wrapper">
-                    <h3 class="card-service-title">
-                        <span class="number-badge">09</span>
-                        Hydraulic Jacks
-                    </h3>
-                    <p class="card-desc">
-                        Heavy-duty hydraulic jacks for lifting and positioning large industrial loads. Available in various tonnage capacities, suitable for maintenance operations in cement plants, factories, and construction sites.
-                    </p>
-                </div>
-            </article>
-
-            <!-- 10. Hydraulic Oil & Grease -->
+            <!-- 09. Hydraulic Oil & Grease -->
             <article class="catalogue-card">
                 <div class="card-img-wrapper">
                     <img class="card-img" src="hydraulic_oil_grease.png" alt="Hydraulic Oil & Grease">
                 </div>
                 <div class="card-text-wrapper">
                     <h3 class="card-service-title">
-                        <span class="number-badge">10</span>
+                        <span class="number-badge">09</span>
                         Hydraulic Oil &amp; Grease
                     </h3>
                     <p class="card-desc">
-                        Premium-grade hydraulic oils and industrial greases to keep your systems running clean and efficient. Available in multiple viscosity grades to suit various hydraulic system requirements and operating temperatures.
+                        Premium-grade hydraulic fluids and heat-stable industrial greases in multiple ISO viscosity grades for optimal system performance.
                     </p>
                 </div>
             </article>
@@ -690,14 +707,14 @@
                 <h2>Heat Exchange Systems</h2>
             </div>
 
-            <!-- 11. Shell & Tube Heat Exchangers -->
+            <!-- 10. Shell & Tube Heat Exchangers -->
             <article class="catalogue-card">
                 <div class="card-img-wrapper">
                     <img class="card-img" src="shell_tube_exchangers.png" alt="Shell & Tube Heat Exchangers">
                 </div>
                 <div class="card-text-wrapper">
                     <h3 class="card-service-title">
-                        <span class="number-badge">11</span>
+                        <span class="number-badge">10</span>
                         Shell &amp; Tube Heat Exchangers
                     </h3>
                     <p class="card-desc">
@@ -706,14 +723,14 @@
                 </div>
             </article>
 
-            <!-- 12. Plate Heat Exchangers -->
+            <!-- 11. Plate Heat Exchangers -->
             <article class="catalogue-card">
                 <div class="card-img-wrapper">
                     <img class="card-img" src="plate_exchangers.png" alt="Plate Heat Exchangers">
                 </div>
                 <div class="card-text-wrapper">
                     <h3 class="card-service-title">
-                        <span class="number-badge">12</span>
+                        <span class="number-badge">11</span>
                         Plate Heat Exchangers
                     </h3>
                     <p class="card-desc">
@@ -722,18 +739,18 @@
                 </div>
             </article>
 
-            <!-- 13. Complete Cooling System Solutions -->
+            <!-- 12. Cooling System Design -->
             <article class="catalogue-card">
                 <div class="card-img-wrapper">
-                    <img class="card-img" src="cooling_system_solutions.png" alt="Complete Cooling System Solutions">
+                    <img class="card-img" src="cooling_system_solutions.png" alt="Cooling System Design">
                 </div>
                 <div class="card-text-wrapper">
                     <h3 class="card-service-title">
-                        <span class="number-badge">13</span>
-                        Complete Cooling System Solutions
+                        <span class="number-badge">12</span>
+                        Cooling System Design
                     </h3>
                     <p class="card-desc">
-                        End-to-end cooling system design, supply, and support for industrial facilities. We assess your thermal requirements and deliver complete solutions — from heat exchanger selection to full system integration — ensuring optimal cooling performance and energy efficiency across your plant operations.
+                        Turnkey cooling system engineering including radiator circuits, monitoring electronics, and dynamic supply valves with filters and auto cutoff switches.
                     </p>
                 </div>
             </article>
@@ -745,14 +762,14 @@
                 <h2>Gears &amp; Power Transmission</h2>
             </div>
 
-            <!-- 14. Gears & Gear Parts -->
+            <!-- 13. Gears & Gear Parts -->
             <article class="catalogue-card">
                 <div class="card-img-wrapper">
                     <img class="card-img" src="gears_gear_parts.png" alt="Gears & Gear Parts">
                 </div>
                 <div class="card-text-wrapper">
                     <h3 class="card-service-title">
-                        <span class="number-badge">14</span>
+                        <span class="number-badge">13</span>
                         Gears &amp; Gear Parts
                     </h3>
                     <p class="card-desc">
@@ -761,14 +778,14 @@
                 </div>
             </article>
 
-            <!-- 15. Gearbox Repair -->
+            <!-- 14. Gearbox Repair -->
             <article class="catalogue-card">
                 <div class="card-img-wrapper">
                     <img class="card-img" src="gearbox_repair.png" alt="Gearbox Repair">
                 </div>
                 <div class="card-text-wrapper">
                     <h3 class="card-service-title">
-                        <span class="number-badge">15</span>
+                        <span class="number-badge">14</span>
                         Gearbox Repair
                     </h3>
                     <p class="card-desc">
