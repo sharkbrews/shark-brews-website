@@ -2485,11 +2485,18 @@
                 method: "POST",
                 body: formData
             })
-                .then(response => {
-                    if (response.ok) {
-                        return response.json();
+                .then(async response => {
+                    let resData;
+                    try {
+                        resData = await response.json();
+                    } catch (e) {
+                        resData = null;
                     }
-                    throw new Error('Network response was not ok.');
+                    if (response.ok && resData && resData.success) {
+                        return resData;
+                    }
+                    const errMsg = (resData && resData.message) || `HTTP error! Status: ${response.status}`;
+                    throw new Error(errMsg);
                 })
                 .then(resData => {
                     // Success state response
@@ -2510,7 +2517,7 @@
                     submitBtn.textContent = originalText;
                     submitBtn.style.opacity = "1";
                     submitBtn.disabled = false;
-                    alert("Oops! There was a problem submitting your form. Please check your Web3Forms access key and try again.");
+                    alert("Oops! There was a problem submitting your form. Error details: " + error.message);
                 });
         }
 
