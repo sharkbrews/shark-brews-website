@@ -1880,7 +1880,8 @@
                             d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
                     </svg>
                     <h3 class="product-title">Hydraulic Pumps & Motors - Supply & Repair</h3>
-                    <p class="product-desc">Professional repair and reconditioning for industrial machinery, restoring full
+                    <p class="product-desc">Professional repair and reconditioning for industrial machinery, restoring
+                        full
                         performance and extending equipment life plus new unit supply in multiple configurations.</p>
                 </div>
 
@@ -1894,7 +1895,8 @@
                         <path d="M5 21h14" />
                     </svg>
                     <h3 class="product-title">Hydraulic Hand Pumps & Jacks</h3>
-                    <p class="product-desc">Industrial hydraulic hand pumps and jacks ranging from 10 Ton to 1000 Ton capacity
+                    <p class="product-desc">Industrial hydraulic hand pumps and jacks ranging from 10 Ton to 1000 Ton
+                        capacity
                         for lifting, maintenance, and heavy-duty applications.</p>
                 </div>
 
@@ -1921,7 +1923,8 @@
                             d="M17 18.5c1.37 0 2.5-1.14 2.5-2.53 0-.72-.35-1.41-1.07-1.99-.71-.58-1.25-1.22-1.43-2.13-.18.91-.72 1.55-1.43 2.13-.72.58-1.07 1.27-1.07 1.99 0 1.39 1.13 2.53 2.5 2.53z" />
                     </svg>
                     <h3 class="product-title">Hydraulic Oil & Grease</h3>
-                    <p class="product-desc">Premium-grade hydraulic fluids and heat-stable industrial greases in multiple
+                    <p class="product-desc">Premium-grade hydraulic fluids and heat-stable industrial greases in
+                        multiple
                         ISO viscosity grades for optimal system performance.</p>
                 </div>
 
@@ -2471,6 +2474,11 @@
             // TODO: Replace this with your Web3Forms access key
             // Get your free key instantly by entering your email at https://web3forms.com
             formData.append("access_key", "e555cd9a-4a1c-4e6c-b8ae-befc4eac40c8");
+            
+            // Set dynamic subject line and sender name
+            const senderName = formData.get("name") || "Visitor";
+            formData.append("subject", `New Inquiry on Your Website from ${senderName}`);
+            formData.append("from_name", "Shark Brews Website");
 
             // Fetch request to Web3Forms API
             fetch("https://api.web3forms.com/submit", {
@@ -2715,85 +2723,85 @@
 
     <!-- VISITOR ANALYTICS TRACKING SYSTEM -->
     <script>
-      (function () {
-        // REPLACE this SCRIPT_URL with your new Google Apps Script Web App URL for the Shark Brews database
-        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzwnX17DWuik_7qZpCT1BYMapws7Q7vrALezkeRwX7u2fwydkki546FkLvqgNlrNX8A/exec";
+        (function () {
+            // REPLACE this SCRIPT_URL with your new Google Apps Script Web App URL for the Shark Brews database
+            const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzwnX17DWuik_7qZpCT1BYMapws7Q7vrALezkeRwX7u2fwydkki546FkLvqgNlrNX8A/exec";
 
-        // Do not log local development views
-        if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1" || window.location.protocol === "file:") {
-          console.log("Analytics: Local views are not logged.");
-          return;
-        }
+            // Do not log local development views
+            if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1" || window.location.protocol === "file:") {
+                console.log("Analytics: Local views are not logged.");
+                return;
+            }
 
-        function getDeviceType() {
-          const ua = navigator.userAgent;
-          const isMacTablet = (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1) ||
-            (ua.includes("Macintosh") && navigator.maxTouchPoints > 1);
-          if (isMacTablet || /(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
-            return "Tablet";
-          }
-          if (/Mobile|iP(hone|od)|Android|BlackBerry|IEMobile|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(ua)) {
-            return "Mobile";
-          }
-          return "Desktop";
-        }
+            function getDeviceType() {
+                const ua = navigator.userAgent;
+                const isMacTablet = (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1) ||
+                    (ua.includes("Macintosh") && navigator.maxTouchPoints > 1);
+                if (isMacTablet || /(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
+                    return "Tablet";
+                }
+                if (/Mobile|iP(hone|od)|Android|BlackBerry|IEMobile|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(ua)) {
+                    return "Mobile";
+                }
+                return "Desktop";
+            }
 
-        function logVisit(country, city) {
-          const payload = {
-            path: window.location.pathname,
-            referrer: document.referrer || "Direct",
-            device: getDeviceType(),
-            country: country || "Unknown",
-            city: city || "Unknown",
-            userAgent: navigator.userAgent
-          };
+            function logVisit(country, city) {
+                const payload = {
+                    path: window.location.pathname,
+                    referrer: document.referrer || "Direct",
+                    device: getDeviceType(),
+                    country: country || "Unknown",
+                    city: city || "Unknown",
+                    userAgent: navigator.userAgent
+                };
 
-          fetch(SCRIPT_URL, {
-            method: "POST",
-            mode: "no-cors",
-            headers: {
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify(payload)
-          }).catch(err => console.error("Analytics error:", err));
-        }
+                fetch(SCRIPT_URL, {
+                    method: "POST",
+                    mode: "no-cors",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(payload)
+                }).catch(err => console.error("Analytics error:", err));
+            }
 
-        // Fetch Geolocation with multi-service fallbacks
-        function fetchLocation() {
-          return fetch("https://freeipapi.com/api/json")
-            .then(res => res.json())
-            .then(data => ({
-              country: data.countryName || "Unknown",
-              city: data.cityName || "Unknown"
-            }))
-            .catch(() => {
-              // Fallback 1: ipapi.co
-              return fetch("https://ipapi.co/json/")
-                .then(res => res.json())
-                .then(data => ({
-                  country: data.country_name || "Unknown",
-                  city: data.city || "Unknown"
-                }))
-                .catch(() => {
-                  // Fallback 2: db-ip
-                  return fetch("https://api.db-ip.com/v2/free/self")
+            // Fetch Geolocation with multi-service fallbacks
+            function fetchLocation() {
+                return fetch("https://freeipapi.com/api/json")
                     .then(res => res.json())
                     .then(data => ({
-                      country: data.countryName || "Unknown",
-                      city: data.city || "Unknown"
+                        country: data.countryName || "Unknown",
+                        city: data.cityName || "Unknown"
                     }))
-                    .catch(() => ({
-                      country: "Unknown",
-                      city: "Unknown"
-                    }));
-                });
-            });
-        }
+                    .catch(() => {
+                        // Fallback 1: ipapi.co
+                        return fetch("https://ipapi.co/json/")
+                            .then(res => res.json())
+                            .then(data => ({
+                                country: data.country_name || "Unknown",
+                                city: data.city || "Unknown"
+                            }))
+                            .catch(() => {
+                                // Fallback 2: db-ip
+                                return fetch("https://api.db-ip.com/v2/free/self")
+                                    .then(res => res.json())
+                                    .then(data => ({
+                                        country: data.countryName || "Unknown",
+                                        city: data.city || "Unknown"
+                                    }))
+                                    .catch(() => ({
+                                        country: "Unknown",
+                                        city: "Unknown"
+                                    }));
+                            });
+                    });
+            }
 
-        fetchLocation().then(loc => {
-          logVisit(loc.country, loc.city);
-        });
-      })();
+            fetchLocation().then(loc => {
+                logVisit(loc.country, loc.city);
+            });
+        })();
     </script>
 </body>
 
